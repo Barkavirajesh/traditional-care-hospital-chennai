@@ -1,0 +1,227 @@
+jQuery(document).ready(function ($) {
+//   jQuery(".banner_wrapper").slick({
+//     dots: false,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 4000,
+//     arrows: false,
+//    	prevArrow:
+//       '<button class="button-slider slide-arrow prev-arrow">  </button>',
+//     nextArrow:
+//       '<button class="button-slider slide-arrow next-arrow"> </button>',
+//   });
+
+  jQuery(".home_blog_wrapper").slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
+});
+jQuery(".home-testimonials-items-wrapper").slick({
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  arrows: false,
+});
+
+jQuery(document).ready(function () {
+  if (window.location.hash) {
+    // Remove the hash (#id) from the URL
+    history.replaceState(
+      "",
+      document.title,
+      window.location.pathname + window.location.search
+    );
+  }
+});
+
+jQuery('.accordion__header').click(function(e) {
+	e.preventDefault();
+	var currentIsActive = jQuery(this).hasClass('is-active');
+	jQuery(this).parent('.accordion').find('> *').removeClass('is-active');
+	if(currentIsActive != 1) {
+		jQuery(this).addClass('is-active');
+		jQuery(this).next('.accordion__body').addClass('is-active');
+	}
+});
+
+//table of content blog js, div move to id
+jQuery(document).ready(function() {
+    jQuery('.table-of-content a[href^="#"]').click(function(event) {
+       	event.preventDefault(); 
+		var headerHeight = jQuery('header').outerHeight(); 
+        var target = jQuery(jQuery(this).attr('href'));
+        var scrollToPosition = target.offset().top - headerHeight;
+		jQuery('html, body').animate({
+        	scrollTop: scrollToPosition
+        }, 900); 
+   });
+});
+
+
+jQuery(document).ready(function($) {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    var yyyy = today.getFullYear();
+	today = yyyy + '-' + mm + '-' + dd; 
+	jQuery('input[type=date]').attr('min', today);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBars = document.querySelectorAll(".consultation_service");
+
+  progressBars.forEach((service) => {
+    const percentageElement = service.querySelector(".percentage");
+    const progressCircle = service.querySelector(".path");
+    const maxPercentage = parseInt(percentageElement.textContent); // Extract percentage
+    const circumference = 2 * Math.PI * 180; // Circumference of the circle
+    const duration = 2000; // Animation duration in milliseconds
+    const frameRate = 60; // Frames per second
+    const totalFrames = duration / (1000 / frameRate); // Total frames for the animation
+
+    let currentPercentage = 0;
+
+    // Animate the percentage counter
+    const updatePercentage = () => {
+      const increment = maxPercentage / totalFrames;
+      const animation = setInterval(() => {
+        currentPercentage += increment;
+        if (currentPercentage >= maxPercentage) {
+          currentPercentage = maxPercentage;
+          clearInterval(animation);
+        }
+        percentageElement.textContent = `${Math.round(currentPercentage)}%`;
+      }, 1000 / frameRate);
+    };
+
+    // Animate the progress bar
+    const animateProgressBar = () => {
+      let offset = circumference;
+      const decrement = circumference * (maxPercentage / 100) / totalFrames;
+      const animation = setInterval(() => {
+        offset -= decrement;
+        if (offset <= circumference * (1 - maxPercentage / 100)) {
+          offset = circumference * (1 - maxPercentage / 100);
+          clearInterval(animation);
+        }
+        progressCircle.style.strokeDashoffset = offset;
+      }, 1000 / frameRate);
+    };
+
+    // Set initial values and start animations
+    progressCircle.style.strokeDasharray = circumference;
+    progressCircle.style.strokeDashoffset = circumference;
+    updatePercentage();
+    animateProgressBar();
+  });
+});
+
+
+//home new banner
+
+// your code goes here
+let list = document.querySelectorAll('.carousel .list .item');
+let carousel = document.querySelector('.carousel');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let mockup = document.querySelector('.mockup');
+let count = list.length;
+let active = 0;
+let leftMockup = 0;
+let left_each_item = 100 / (list.length - 1);
+next.onclick = () => {
+    active = active >= count - 1 ? 0 : active + 1;
+    leftMockup = leftMockup + left_each_item;
+    carousel.classList.remove('right');
+    changeCarousel();
+}
+prev.onclick = () => {
+    active = active <= 0 ? count - 1 : active - 1;
+    leftMockup = leftMockup - left_each_item;
+    carousel.classList.add('right');
+    changeCarousel();
+}
+function changeCarousel() {
+    // Find the old active item and remove its active class
+    let active_old = document.querySelector('.item.active');
+    if (active_old) {
+        active_old.classList.remove('active');
+        active_old.classList.add('hidden');
+    }
+	// Add the active class to the new item
+    list[active].classList.add('active');
+    list[active].classList.remove('hidden');
+	// Update mockup position
+    mockup.style.setProperty('--left', leftMockup + '%');
+	// Reset the interval
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        next.click();
+    }, 10000);
+}
+
+// auto run 5s
+let refreshInterval = setInterval(()=> {next.click()}, 5000);
+
+// text slide 
+let items = document.querySelectorAll('.item');
+  let currentIndex = 0;
+
+  setInterval(() => {
+    items[currentIndex].classList.remove('active'); // Hide the current item
+    currentIndex = (currentIndex + 1) % items.length; // Move to the next item
+    items[currentIndex].classList.add('active'); // Show the next item
+  }, 5000); // Change every 3 seconds
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var captchaInput = document.querySelector(".dscf7captcha");
+
+    if (captchaInput) {
+        // Remove default text
+        captchaInput.value = "";
+
+        // Set placeholder
+        captchaInput.setAttribute("placeholder", "Enter answer here");
+
+        // Prevent default text from reappearing on focus
+        captchaInput.addEventListener("focus", function () {
+            this.value = "";
+        });
+    }
+});
+

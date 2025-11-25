@@ -1,0 +1,3087 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.corp-container {
+  padding: 0;
+  max-width: 100% !important;
+  /* overflow: hidden; */
+}
+
+.corp-container-fluid {
+  padding: 0px 0px;
+  margin: 0px auto;
+}
+
+body {
+  font-size: 16px;
+  line-height: 26px;
+/*   color: var(--white); */
+	color:#000000;
+  background: var(--white);
+}
+
+.merri {
+  font-family: "Merriweather", sans-serif !important;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --base: #ff6f00;
+  --secoundary: #10874c;
+  --G_bg: #f5fff9;
+  --O_bg: #fffbf5;
+  --G1: #e7f3ed;
+  --G2: #cfe7db;
+  --G3: #b7dbc9;
+  --G4: #9fcfb7;
+  --G5: #87c3a5;
+  --G6: #70b794;
+  --G7: #58ab82;
+  --G8: #409f70;
+  --G9: #28935e;
+  --G10: #10874c;
+  --G15: #084426;
+  --G16: #06361e;
+  --G17: #052917;
+  --G19: #020e08;
+
+  --O1: #fff1e5;
+  --O2: #ffe2cc;
+  --O3: #ffd4b2;
+  --O4: #ffc599;
+  --B450: #737373;
+  --B900: #e5e5e5;
+}
+
+/* common css */
+a,
+ul li a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--black);
+  margin: 0 !important;
+}
+
+p {
+  margin-top: 20px !important;
+  margin-bottom: 15px !important;
+}
+
+.h1 {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+.h3 {
+  font-size: 25px;
+  line-height: 34px;
+  font-weight: 600;
+}
+
+.larger {
+  font-size: 96px;
+  line-height: 102px;
+  font-weight: 700;
+  color: var(--G10);
+}
+
+.large {
+  font-size: 61px;
+  line-height: 74px;
+  font-weight: 700;
+  color: var(--G10);
+}
+
+.med {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  color: var(--G15);
+}
+
+.small {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 500;
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-base {
+  color: var(--base);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+ul {
+  margin: 0 !important;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 100px;
+  justify-content: center;
+}
+
+/* header */
+.site-header .site-header-inner {
+    justify-content: inherit;
+}
+.site-branding {
+    width: 20%;
+}
+.my-header-right {
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    align-items: baseline;
+}
+
+.search-toggle svg {
+  height: 22px !important;
+  width: auto !important;
+  margin-right: 30px !important;
+}
+
+.search-toggle path {
+  fill: var(--secoundary) !important;
+}
+
+#masthead {
+  background-color: var(--G_bg);
+  width: 100%;
+  margin-bottom: 0 !important;
+  padding: 25px 100px !important;
+}
+
+#primary-menu li.current_page_ancestor > a,
+#primary-menu li.current-menu-item > a {
+  border-color: transparent !important;
+  background: var(--G1);
+  padding: 10px 15px !important;
+  border-radius: 5px;
+  border: 0 !important;
+}
+
+#primary-menu li:hover {
+  border: 0 !important;
+}
+#primary-menu > li > a {
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+#primary-menu .link-underline.main-navigation div > ul:not(.cart_list) > li > a,
+#primary-menu li:hover a {
+  border: 0 !important;
+}
+
+#primary-menu li > a:hover {
+  border: transparent !important;
+}
+
+#primary-menu ul.sub-menu {
+  margin-top: 45px !important;
+  padding: 10px !important;
+  border-radius: 12px !important;
+  left: -10px !important;
+  background: var(--white);
+  box-shadow: 0 10px 30px 0 rgba(45, 45, 45, 0.2);
+  gap: 7px;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+#primary-menu ul.sub-menu li {
+  border: 0 !important;
+}
+
+#primary-menu ul.sub-menu li a {
+  background: white;
+  border: 0 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+}
+
+#primary-menu ul.sub-menu li:hover a {
+  background: var(--secoundary) !important;
+  color: var(--white) !important;
+}
+
+ .menu-header-menu-container li a {
+  font-size: 16px;
+  font-weight: 400 !important;
+  color: var(--secoundary) !important;
+}
+
+.G_btn {
+  background-color: var(--secoundary);
+  color: var(--G_bg);
+}
+
+.G_btn a {
+  color: var(--G1);
+}
+
+.G_arw {
+  background-color: var(--G1);
+}
+
+.G_arw path {
+  fill: var(--secoundary);
+}
+
+.O_btn {
+  background-color: var(--base);
+  color: var(--O_bg);
+}
+
+.O_btn a {
+  color: var(--O1);
+}
+
+.O_arw {
+  background-color: var(--O1);
+}
+
+.O_arw path {
+  fill: var(--base);
+}
+
+.btn {
+  display: inline-flex !important;
+  padding: 10px 15px 10px 25px !important;
+  border-radius: 50px;
+  width: fit-content;
+  column-gap: 20px;
+}
+
+.btn a {
+  display: inline-flex;
+  font-size: 20px !important;
+  font-weight: 600;
+}
+
+.arw {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.arw svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px !important;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+.masthead-sentinel {
+    margin-bottom: 0px;
+}
+li.foo-hours p {
+	font-size: 18px;
+    font-weight: 600;
+	color: #06361e;
+    margin-bottom: 0px !important;
+}
+li.foo-hours img {
+    position: relative;
+    top: 10px;
+}
+li.foo-hours p {
+    margin-top: 0px !important;
+}
+.footer-located-wrapper {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+	width: 100%;
+}
+.footer-located-col1 img {
+    height: 55px !important;
+}
+.footer-content {
+    margin-bottom: 20px;
+}
+.fixed-whatsapp-wrapper {
+    position: fixed;
+    right: 0;
+    bottom: 20%;
+    z-index: 999;
+}
+.fixed-whatsapp-wrapper img {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+@media screen and  (max-width: 480px) {
+	
+	.large {
+        font-size: 22px !important;
+        line-height: 40px !important;
+      }
+	 .med {
+       font-size: 14px !important;
+       line-height: 28px !important;
+       font-weight: 500 !important;
+       }
+	#scroll-to-top{
+		display:none
+	}
+	.footer-book-consultation-wrapper{
+		 position: fixed;
+         bottom: 0;
+         right: 100px;
+         background-color: #ff6f00;
+         padding: 15px 20px;
+         z-index: 999;
+         width: 100%;
+         left: 0px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+	}
+   }
+
+
+/*  Banner */
+
+.banner_section {
+  position: relative;
+  width: -webkit-fill-available !important;
+  overflow: hidden;
+  height: 650px;
+	margin-top:0 !important;
+  align-items: flex-end;
+  background-image: url("/wp-content/uploads/2024/12/banner_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.list {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content p{
+	margin:15px 0!important;
+}
+.scroll-container {
+  /* Hide the overflowing part of the image */
+  position: relative;
+  width: 915px;
+  align-content: end;
+}
+
+.scroll-content {
+  clip-path: polygon(80.363% 99.999%,
+      80.363% 99.999%,
+      81.925% 99.186%,
+      83.372% 98.357%,
+      84.705% 97.522%,
+      85.925% 96.692%,
+      87.036% 95.878%,
+      88.039% 95.091%,
+      88.935% 94.341%,
+      89.727% 93.64%,
+      90.415% 92.998%,
+      91.003% 92.426%,
+      91.003% 92.426%,
+      92.239% 91.152%,
+      93.398% 89.866%,
+      94.481% 88.579%,
+      95.49% 87.303%,
+      96.424% 86.049%,
+      97.284% 84.828%,
+      98.071% 83.652%,
+      98.786% 82.532%,
+      99.429% 81.479%,
+      100% 80.504%,
+      100% 80.504%,
+      99.225% 79.19%,
+      98.429% 77.908%,
+      97.612% 76.66%,
+      96.775% 75.447%,
+      95.918% 74.27%,
+      95.041% 73.128%,
+      94.146% 72.023%,
+      93.232% 70.955%,
+      92.301% 69.925%,
+      91.352% 68.934%,
+      91.352% 68.934%,
+      90.347% 67.944%,
+      89.325% 66.998%,
+      88.284% 66.096%,
+      87.227% 65.24%,
+      86.154% 64.43%,
+      85.064% 63.667%,
+      83.959% 62.952%,
+      82.84% 62.285%,
+      81.705% 61.667%,
+      80.558% 61.099%,
+      79.702% 60.697%,
+      80.13% 59.441%,
+      80.13% 59.441%,
+      80.693% 57.732%,
+      81.223% 56.004%,
+      81.722% 54.257%,
+      82.189% 52.493%,
+      82.625% 50.712%,
+      83.028% 48.917%,
+      83.4% 47.107%,
+      83.739% 45.286%,
+      84.047% 43.453%,
+      84.323% 41.61%,
+      84.323% 41.61%,
+      84.558% 39.829%,
+      84.764% 38.041%,
+      84.94% 36.246%,
+      85.087% 34.446%,
+      85.205% 32.641%,
+      85.293% 30.833%,
+      85.352% 29.021%,
+      85.382% 27.209%,
+      85.382% 25.395%,
+      85.353% 23.581%,
+      85.353% 23.581%,
+      84.227% 23.534%,
+      83.101% 23.535%,
+      81.976% 23.582%,
+      80.851% 23.677%,
+      79.727% 23.82%,
+      78.606% 24.009%,
+      77.487% 24.246%,
+      76.372% 24.53%,
+      75.261% 24.861%,
+      74.155% 25.239%,
+      74.155% 25.239%,
+      73.01% 25.683%,
+      71.872% 26.179%,
+      70.741% 26.726%,
+      69.618% 27.324%,
+      68.503% 27.974%,
+      67.398% 28.675%,
+      66.302% 29.427%,
+      65.218% 30.23%,
+      64.144% 31.084%,
+      63.083% 31.99%,
+      62.303% 32.679%,
+      62.054% 31.302%,
+      62.054% 31.302%,
+      61.701% 29.453%,
+      61.317% 27.628%,
+      60.902% 25.825%,
+      60.458% 24.046%,
+      59.984% 22.292%,
+      59.481% 20.564%,
+      58.949% 18.862%,
+      58.389% 17.187%,
+      57.802% 15.541%,
+      57.187% 13.923%,
+      57.187% 13.923%,
+      56.571% 12.395%,
+      55.931% 10.896%,
+      55.268% 9.425%,
+      54.581% 7.983%,
+      53.871% 6.572%,
+      53.139% 5.192%,
+      52.386% 3.844%,
+      51.611% 2.529%,
+      50.816% 1.247%,
+      50% 0%,
+      50% 0%,
+      49.183% 1.247%,
+      48.387% 2.529%,
+      47.612% 3.844%,
+      46.859% 5.192%,
+      46.127% 6.572%,
+      45.418% 7.983%,
+      44.732% 9.425%,
+      44.068% 10.896%,
+      43.429% 12.395%,
+      42.813% 13.923%,
+      42.813% 13.923%,
+      42.198% 15.541%,
+      41.611% 17.187%,
+      41.051% 18.862%,
+      40.519% 20.564%,
+      40.016% 22.292%,
+      39.542% 24.046%,
+      39.098% 25.825%,
+      38.683% 27.628%,
+      38.299% 29.453%,
+      37.946% 31.302%,
+      37.697% 32.679%,
+      36.917% 31.99%,
+      36.917% 31.99%,
+      35.855% 31.084%,
+      34.781% 30.23%,
+      33.695% 29.427%,
+      32.6% 28.675%,
+      31.494% 27.974%,
+      30.379% 27.324%,
+      29.257% 26.726%,
+      28.126% 26.179%,
+      26.989% 25.683%,
+      25.845% 25.239%,
+      25.845% 25.239%,
+      24.739% 24.861%,
+      23.629% 24.53%,
+      22.514% 24.246%,
+      21.396% 24.009%,
+      20.275% 23.82%,
+      19.151% 23.677%,
+      18.026% 23.582%,
+      16.9% 23.535%,
+      15.774% 23.534%,
+      14.647% 23.581%,
+      14.647% 23.581%,
+      14.618% 25.395%,
+      14.618% 27.209%,
+      14.648% 29.021%,
+      14.707% 30.833%,
+      14.795% 32.641%,
+      14.913% 34.446%,
+      15.06% 36.246%,
+      15.236% 38.041%,
+      15.442% 39.829%,
+      15.677% 41.61%,
+      15.677% 41.61%,
+      15.953% 43.451%,
+      16.261% 45.283%,
+      16.6% 47.103%,
+      16.972% 48.912%,
+      17.375% 50.707%,
+      17.811% 52.487%,
+      18.278% 54.251%,
+      18.777% 55.998%,
+      19.307% 57.726%,
+      19.87% 59.435%,
+      20.298% 60.691%,
+      19.442% 61.092%,
+      19.442% 61.092%,
+      18.295% 61.661%,
+      17.16% 62.279%,
+      16.041% 62.946%,
+      14.936% 63.661%,
+      13.846% 64.424%,
+      12.773% 65.234%,
+      11.716% 66.09%,
+      10.675% 66.991%,
+      9.653% 67.937%,
+      8.648% 68.927%,
+      8.648% 68.927%,
+      7.699% 69.919%,
+      6.768% 70.949%,
+      5.855% 72.017%,
+      4.96% 73.123%,
+      4.084% 74.266%,
+      3.227% 75.444%,
+      2.389% 76.657%,
+      1.572% 77.904%,
+      0.776% 79.185%,
+      0% 80.498%,
+      0% 80.498%,
+      0.57% 81.473%,
+      1.212% 82.526%,
+      1.927% 83.647%,
+      2.714% 84.824%,
+      3.575% 86.046%,
+      4.509% 87.301%,
+      5.518% 88.578%,
+      6.602% 89.865%,
+      7.761% 91.152%,
+      8.997% 92.426%,
+      8.997% 92.426%,
+      9.588% 93.001%,
+      10.279% 93.645%,
+      11.072% 94.348%,
+      11.969% 95.098%,
+      12.971% 95.884%,
+      14.081% 96.697%,
+      15.301% 97.525%,
+      16.632% 98.357%,
+      18.077% 99.183%,
+      19.637% 99.993%,
+      19.637% 99.993%,
+      25.32% 99.995%,
+      31.324% 99.996%,
+      37.562% 99.997%,
+      43.946% 99.998%,
+      50.387% 99.998%,
+      56.797% 99.998%,
+      63.089% 99.997%,
+      69.174% 99.996%,
+      74.964% 99.995%,
+      80.371% 99.993%,
+      80.363% 99.999%);
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.scroll-content img {
+  animation: scrollImage 10s infinite;
+  /* 3-second scrolling effect */
+  height: 100%;
+  max-width: fit-content;
+
+}
+
+.arrow {
+/*   position: absolute;
+  top: 50%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between; */
+
+  display:none; 
+}
+
+#prev,
+#next {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid #eee9;
+  color: #eee;
+  font-size: x-large;
+  font-family: monospace;
+  cursor: pointer;
+  z-index: 15;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+@keyframes scrollImage {
+  0% {
+    transform: translateX(0);
+  }
+
+  45% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  99% {
+    transform: translateX(-50%);
+  }
+}
+  .item {
+      display: none; /* Initially hide all items */
+      transition: opacity 1s ease-in-out;
+    }
+    .item.active {
+      display: block; /* Show the active item */
+      opacity: 1;
+    }
+
+
+@media screen and (max-width: 1680px) {
+
+  .banner_section {
+    height: 530px;
+    padding: 0 60px;
+  }
+
+  .scroll-container {
+    width: 50%;
+  }
+
+  .scroll-content {
+    height: 485px !important;
+    width: 100%;
+
+  }
+
+}
+
+@media screen and (max-width: 1440px) {
+
+  .banner_section {
+    height: 500px;
+  }
+
+  .scroll-content {
+    height: 410px !important;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+
+  .banner_section {
+    height: 400px;
+    padding: 0 40px;
+  }
+
+  .scroll-content {
+    height: 295px !important;
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .list {
+    width: 100%;
+  }
+
+  .banner_section {
+    height: 620px;
+    padding: 0 60px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+	.banner_section h1{
+		text-align:center;
+	}
+  .scroll-container {
+    width: 400px;
+    max-height: 45%;
+  }
+
+  .scroll-content {
+    height: 90% !important;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .banner_section {
+    height: 550px;
+    padding: 0 30px;
+  }
+
+  .scroll-container {
+    width: 100%;
+    max-height: 45%;
+
+  }
+
+  .scroll-content {
+    height: 100% !important;
+  }
+
+}
+
+
+
+/* achievement */
+.home_achievement {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.our_achievement {
+  position: relative;
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.our_achievement::before {
+  content: "";
+  height: 10%;
+  width: 7px;
+  border-radius: 10px;
+  background-color: var(--base);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: line-ani 8s ease-in-out infinite;
+}
+
+.home_achievement_text_size {
+    font-size: 35px;
+}
+
+@keyframes line-ani {
+  0%,
+  100% {
+    top: 0;
+    height: 10%;
+  }
+  50% {
+    top: 100%;
+  }
+}
+
+.our_achievement h2 {
+  color: var(--G10);
+  margin: 0 !important;
+  font-family: "Merriweather", sans-serif !important;
+}
+
+.our_achievement p {
+  color: var(--black);
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 500;
+  margin-bottom: 0 !important;
+  margin-top: 5% !important;
+}
+
+.achievements {
+  position: relative;
+  width: 32%;
+  background-color: var(--O_bg);
+  border: 3px solid var(--G5);
+  border-radius: 20px;
+  padding: 20px 35px;
+}
+
+.achievements:before {
+  content: "";
+  background-image: url("/wp-content/uploads/2024/12/Vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  mix-blend-mode: luminosity;
+}
+
+.achievements h2 {
+  font-weight: 600;
+}
+
+.achievements p {
+  font-weight: 500;
+  position: relative;
+  margin: 0 !important;
+}
+
+/* About Us Home Pgae */
+
+.home_about_sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home_up_side {
+  /* position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+  z-index: 6; */
+  text-align: center;
+}
+
+.home_up_side h3 {
+  width: 100%;
+  margin-bottom: 25px !important;
+  z-index: 3;
+  position: relative;
+  font-family: "Merriweather", sans-serif !important;
+}
+
+.home_up_side h3::before {
+  content: "";
+  position: absolute;
+  background-image: url("/wp-content/uploads/2024/12/Vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 155px;
+  height: 155px;
+  bottom: 0;
+  left: 45%;
+  z-index: -2;
+}
+
+.home_up_side p {
+  /* width: 75%; */
+  /* margin: 0 !important; */
+}
+
+.home_about_below_side {
+  display: flex;
+  width: 100%;
+  column-gap: 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about_below_left {
+  display: flex;
+  position: relative;
+  width: 45%;
+  column-gap: 3%;
+  justify-content: center;
+}
+
+.about_below_left > img {
+  width: 49%;
+}
+
+.circle_img {
+  position: absolute;
+  width: 50%;
+  top: 25%;
+  /* margin: 21%; */
+  display: flex;
+  justify-content: center;
+}
+
+.about_below_right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about_below_right h4 {
+  position: relative;
+  padding-left: 20px;
+  color: var(--secoundary);
+}
+
+.about_below_right h4::before {
+  content: "";
+  height: 100%;
+  width: 4px;
+  border-radius: 4px;
+  background-color: var(--base);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.about_below_right p {
+  margin-bottom: 40px !important;
+}
+
+.about_below_right .about_points {
+  display: flex;
+  width: 100%;
+  margin-top: 40px 0 !important;
+  column-gap: 10%;
+  margin-bottom: 40px !important;
+}
+
+.about_below_right .about_points ul li {
+  list-style: none;
+  color: var(--base);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 25px 0;
+}
+
+.about_below_right .about_points ul img {
+  width: 45px;
+  margin-right: 20px;
+}
+
+/* Diseases */
+
+.home_diseases_section {
+  background-image: url("/wp-content/uploads/2024/12/we_treat.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  padding: 50px 0 !important;
+}
+
+.home_diseases_sec {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home_diseases_below_side {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+	margin-top: 20px;
+}
+
+.home_deseases {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+	max-width: 1500px;
+}
+
+.diseases {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  padding: 30px 60px;
+  border-radius: 25px;
+  background-color: #157948e8;
+  border: 1px solid var(--G2);
+  mix-blend-mode: multiply;
+  margin: 0 15px;
+  margin-bottom: 50px;
+}
+
+.diseases img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.diseases h3 {
+  color: var(--white);
+}
+.diseases h3 {
+    font-size: 23px !important;
+}
+
+/* Services */
+
+.home_service_sec {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.home_service_below_side {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_service {
+  display: flex;
+  align-items: center;
+}
+
+.home_service .service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 60px;
+}
+
+.home_service h3 {
+  color: var(--base) !important;
+  margin: 45px auto 25px auto !important;
+}
+
+.home_service .G_btn {
+  border: 2px solid var(--secoundary) !important;
+  background: transparent;
+}
+
+.home_service .G_btn a {
+  color: var(--secoundary) !important;
+}
+
+.home_service .G_btn a:visited {
+  color: var(--secoundary) !important;
+}
+
+.home_service .G_arw {
+  background-color: var(--secoundary) !important;
+}
+
+.home_service .G_arw path {
+  fill: var(--G1) !important;
+}
+
+.home_service .service_1 {
+  border-bottom: 2px solid var(--O2);
+  border-right: 2px solid var(--O2);
+}
+
+.home_service .service_2 {
+  border-bottom: 2px solid var(--O2);
+}
+
+.home_service .service_3 {
+  border-bottom: 2px solid var(--O2);
+
+  border-left: 2px solid var(--O2);
+}
+
+/* Why Choose Ayur Khyati */
+
+.home_ayur_sec {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.home_ayur_below_side {
+  display: flex;
+  width: 100%;
+  width: 100%;
+  column-gap: 5%;
+  align-items: center;
+}
+
+.ayur_below_left {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ayur_below_left h4 {
+  position: relative;
+  padding-left: 20px;
+  color: var(--secoundary);
+}
+
+.ayur_below_left h4::before {
+  content: "";
+  height: 100%;
+  width: 4px;
+  border-radius: 4px;
+  background-color: var(--base);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ayurkhyati_points {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.ayurkhyati_points ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ayurkhyati_points ul li {
+	 list-style: none;
+	
+}
+.ayurkhyati_points ul li .ayur_point {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 10px 0;
+ 
+}
+
+.ayurkhyati_points ul li .ayur_point img {
+  margin-top: 5px;
+}
+
+.ayurkhyati_points ul li .ayur_detais {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 15px;
+}
+
+.ayurkhyati_points ul li .ayur_detais h5 {
+  color: var(--G16);
+}
+
+.ayurkhyati_points ul li .ayur_detais p {
+  margin: 10px 0 !important;
+  color: var(--G19);
+}
+
+.ayur_below_right {
+  display: flex;
+  width: 40%;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.ayur_below_right > img {
+  height: 95%;
+  position: relative;
+}
+
+.ayur_below_right:after {
+  position: absolute;
+  content: "";
+  background-image: url(/wp-content/uploads/2024/12/Vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 70%;
+  height: 70%;
+  bottom: -5px;
+  left: -35%;
+  mix-blend-mode: luminosity;
+}
+
+/* Testimonials */
+
+.home_testimonial_sec {
+  width: 100%;
+}
+
+.home_testi_below_side {
+  display: flex;
+  width: 100%;
+  border-radius: 25px;
+  background: url(/wp-content/uploads/2024/12/testi_bg.svg)
+    var(--O1);
+  justify-content: space-around;
+}
+
+.testi_below_left {
+  width: 40%;
+  display: flex;
+}
+
+.testi_below_right {
+  width: 50%;
+}
+
+.testi_below_right .testimonial_top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.testi_below_right .testimonial_top img {
+  width: fit-content;
+}
+
+.testi_below_right .testimonial_below {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-testimonials-items-wrapper.slick-initialized.slick-slider {
+  height: 100% !important;
+}
+
+.home-testimonials-items-wrapper div {
+  height: 100% !important;
+}
+
+.testi_below_right .testimonial_below > p {
+  margin: 0 !important;
+  display: flex;
+  height: 60%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.testi_below_right .testimonial_below .testimonial_author {
+  width: 100%;
+  height: 25% !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.testi_below_right .testimonial_below .testimonial_author img {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	border-radius:100%;
+	border:2px solid var(--O4);
+}
+
+.testimonial_author .testimonaial_author_detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  float: left;
+  margin-left: 25px;
+}
+
+.testimonial_author .testimonaial_author_detail > h5 {
+  color: var(--G19);
+}
+
+.testimonial_author .testimonaial_author_detail > p {
+  margin: 0 !important;
+  color: var(--G19);
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 30px !important;
+}
+
+/* Blog */
+.home_blog_section {
+  background-image: url("/wp-content/uploads/2024/12/blog_bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  padding: 50px 0 !important;
+}
+
+.home_blogs_sec {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_blog_below_side {
+  padding: 0 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home_blog_wrapper {
+  display: flex !important;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.home_blog_wrapper .slick-slide {
+  margin: 0 35px;
+}
+
+.home_blog_wrapper .home_blogs {
+  width: 100%;
+  background: var(--G1);
+  box-shadow: 0 7px 5px 0 #34634c20;
+  border-radius: 25px;
+  padding-bottom: 25px;
+  margin: 15px 0;
+}
+
+.home_blogs .home_blog_img {
+  max-height: 300px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.home_blogs .home_blog_img img {
+  height: 300px !important;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.home_blogs .blog_info {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 0;
+  padding: 0 25px;
+}
+
+.home_blogs .blog_info .blog_read_time,
+.home_blogs .blog_info .blog_publish_date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  row-gap: 25px;
+}
+
+.home_blogs .blog_info img {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.home_blogs .blog_info p {
+  margin: 0 !important;
+  margin-top: 3px !important;
+  margin-left: 15px !important;
+  font-size: 14px;
+  color: var(--B450);
+  font-weight: 500;
+  width: 100%;
+}
+
+.home_blogs h5 {
+  display: flex;
+  text-align: left;
+  width: 100%;
+  justify-content: flex-start;
+  float: left;
+  padding: 0 20px;
+  margin-bottom: 15px !important;
+  align-items: flex-start;
+  display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+	font-size:20px;
+}
+
+.home_blogs a {
+  width: 100%;
+  padding-left: 25px !important;
+  display: flex;
+  justify-content: flex-start;
+  float: left;
+}
+
+/* Footer */
+
+.site-footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-footer {
+  background: url("/wp-content/uploads/2024/12/footer_bg.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 80px 150px !important;
+  margin: 0 !important;
+  padding-bottom: 10px !important;
+}
+
+.footer-top {
+  width: 75%;
+  display: flex;
+  padding: 30px 50px !important;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  border-radius: 20px;
+  background: var(--G1);
+  border: 2px solid var(--G7);
+}
+
+.footer-top .btn {
+  background-color: var(--secoundary);
+}
+
+.footer-top .btn a {
+  color: var(--G1);
+}
+
+.footer-top h3 {
+  margin: 0;
+  color: var(--secoundary);
+}
+
+footer .widgets {
+  padding-bottom: 30px !important;
+}
+
+footer .widgets-5 a {
+  font-size: 18px;
+  color: var(--G16);
+  font-weight: 500;
+}
+
+#custom_html-2 {
+  width: 22% !important;
+}
+
+#nav_menu-2 {
+  width: 13% !important;
+}
+
+#custom_html-2 img {
+  width: 85% !important;
+}
+
+footer h2 {
+  color: var(--secoundary) !important;
+  font-size: 18px !important;
+  line-height: 34px !important;
+  font-weight: 600 !important;
+  font-family: "Merriweather", sans-serif !important;
+}
+
+footer a {
+  font-weight: 600 !important;
+  color: var(--G16) !important;
+}
+
+.G_btn a {
+  color: var(--G1) !important;
+}
+
+.G_btn a:visited {
+  color: var(--G1) !important;
+}
+
+footer li {
+  column-gap: 15px;
+  margin: 10px 0;
+  line-height: 38px !important;
+}
+
+.footer-content p {
+  margin: 5px 0 !important;
+  max-width: 85%;
+  text-align: justify;
+  font-weight: 500 !important;
+}
+
+.footer-social {
+  display: flex;
+  column-gap: 15px;
+  margin-top: 10px !important;
+}
+
+.footer-social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social img {
+  max-width: 25px;
+}
+
+.footer_contact {
+  margin-top: 10px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_contact li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer_contact li a {
+  line-height: 1.43;
+}
+
+.footer_contact li a:visited {
+  color: var(--G16) !important;
+}
+
+.footer_contact li img {
+  width: 20px !important;
+}
+
+footer .bottom-bar {
+  background: none !important;
+  border-top: 1px solid var(--G6);
+  padding: 15px 0 !important;
+}
+
+footer .bottom-bar .site-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .bottom-bar .site-info span {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--G6);
+}
+
+footer .bottom-bar .site-info span a {
+  display: flex;
+  align-items: center;
+  color: var(--G6);
+}
+
+.footer-book-consultation-wrapper {
+    position: fixed;
+    bottom: 0;
+    right: 100px;
+    background-color: #ff6f00;
+    padding: 15px 20px;
+	z-index: 999;
+}
+.footer-book-consultation-wrapper p {
+    margin: 0px 0px !important;
+    color: #ffffff;
+    position: relative;
+    padding-left: 40px !important;
+}
+.footer-book-consultation-wrapper p:before {
+    position: absolute;
+    content: '';
+    background-image: url(/wp-content/uploads/2024/12/user-interface.svg);
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: -5px;
+    top: -5px;
+}
+.site-info a {
+    color: #70b794 !important;
+    font-weight: 500 !important;
+}
+.site-info img {
+    padding-left: 5px;
+}
+
+@media (max-width:767px) {
+	.footer-book-consultation-wrapper {
+    	right: 20px;
+    }
+	.diseases {
+    	width: 100%;
+    }
+}
+
+/* Responsive */
+
+@media screen and (min-width: 2500px) {
+  .ayur_below_right:after {
+    left: auto !important;
+  }
+
+  .about_below_left > img{
+    max-width: 35%!important;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  body {
+    font-size: 18px !important;
+  }
+
+  section {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 30px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .larger {
+    font-size: 65px;
+    line-height: 75px;
+    font-weight: 700;
+    color: var(--G10);
+  }
+
+
+  .med {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500 ;
+  }
+
+  .h1 {
+    font-size: 30px !important;
+    line-height: 40px !important;
+  }
+
+  .h3 {
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+
+/*   p {
+    width: 100% !important;
+    text-align: center;
+    font-size: 16px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  } */
+
+  .btn {
+    column-gap: 20px;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content !important;
+    padding: 7px 12px 7px 15px !important;
+  }
+
+  .btn a {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    width: max-content !important;
+  }
+
+  #masthead {
+    padding: 15px 30px !important;
+  }
+
+  .menu-header-menu-container li a {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .menu-header-menu-container li {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .achievements p {
+    text-align: left !important;
+  }
+  .achievements:before {
+    left: 20%;
+  }
+  .home_up_side h3::before {
+    width: 120px;
+    height: 120px;
+    top: -70px;
+    left: 46%;
+    z-index: -2;
+  }
+
+  .home_up_side {
+    margin-bottom: 15px !important;
+  }
+
+  .home_up_side h3 {
+    margin-bottom: 20px !important;
+  }
+
+  .home_about_below_side {
+    column-gap: 5% !important;
+  }
+
+  .about_below_right {
+    width: 55% !important;
+  }
+
+  .about_below_left {
+    width: 40% !important;
+    height: auto;
+    align-items: center;
+  }
+
+  .about_below_left > img {
+    height: 70% !important;
+  }
+
+  .circle_img {
+    width: 90% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0% !important;
+  }
+  .circle_img img {
+    max-width: 50% !important;
+  }
+
+  .about_below_right p {
+    text-align: justify;
+    margin: 20px 0 !important;
+  }
+
+  .about_below_right .about_points {
+    margin-bottom: 25px !important;
+    flex-direction: column;
+  }
+  .about_below_right .about_points li {
+    margin: 12px 0 !important;
+  }
+
+  .about_below_right .about_points li:nth-child(1) {
+    margin-top: 0 !important;
+  }
+
+  .home_diseases_section {
+    margin-top: 30px !important;
+    padding: 50px 20px !important;
+  }
+
+  .testi_below_left {
+    display: flex !important;
+  }
+  .testi_below_right .testimonial_below > p {
+    height: 55%;
+  }
+
+  .testimonial_author {
+    height: 30% !important;
+  }
+
+  .home_blog_section {
+    padding: 60px 0 !important;
+    padding-bottom: 30px !important;
+  }
+
+  .site-footer {
+    padding: 40px !important ;
+    padding-bottom: 10px !important ;
+  }
+
+  .site-footer .widgets {
+    padding: 45px 0 !important ;
+    padding-bottom: 30px !important;
+  }
+
+  .home_ayur_below_side p {
+    text-align: justify !important;
+  }
+
+  .ayurkhyati_points {
+    margin: 20px 0 !important;
+  }
+
+  .ayur_below_right:after {
+    left: -35%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 18px !important;
+  }
+
+  section {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 30px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .larger {
+    font-size: 70px;
+    line-height: 85px;
+    font-weight: 700;
+    color: var(--G10);
+  }
+
+ 
+
+  .h1 {
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+
+  .h3 {
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+
+  p {
+    width: 100% !important;
+/*     text-align: center; */
+    font-size: 16px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .btn {
+    column-gap: 20px;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content !important;
+    margin: 0 auto;
+    padding: 7px 12px 7px 15px !important;
+  }
+
+  .btn a {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    width: max-content !important;
+  }
+
+  #masthead {
+    padding: 15px 30px !important;
+  }
+
+  .site-branding {
+    width: 30% !important;
+  }
+
+  #site-navigation {
+    width: 100% !important;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #primary-menu > li,
+  .search-toggle svg {
+    margin-right: 20px !important;
+  }
+
+  .menu-header-menu-container ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .menu-header-menu-container li a {
+    font-size: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .menu-header-menu-container li {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  nav#site-navigation {
+    display: flex !important;
+  }
+
+  .main-navigation .search-toggle {
+    margin-left: 0px !important;
+  }
+
+  #primary-menu ul.sub-menu {
+    margin-top: 25px !important;
+  }
+
+  #primary-menuli.current_page_ancestor > a {
+    padding: 10px 15px !important;
+  }
+
+  #masthead .btn {
+    display: none !important;
+  }
+
+
+  /* Achievement */
+
+  .home_achievement {
+    display: flex;
+    flex-wrap: wrap !important;
+  }
+
+  .home_achievement p {
+    margin-top: 15px !important;
+  }
+
+  .our_achievement {
+    width: 100%;
+    padding-left: 25px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .our_achievement::before {
+    width: 4px !important;
+  }
+
+  .our_achievement p {
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  .achievements {
+    width: 48%;
+    padding: 10px 25px !important;
+  }
+
+  .achievements p {
+    text-align: left !important;
+  }
+
+  .home_up_side h3::before {
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    left: 45%;
+  }
+
+  .home_about_below_side {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about_below_left {
+    width: 100% !important;
+    align-items: center;
+    column-gap: 3%;
+    justify-content: space-between;
+    margin-bottom: 45px !important;
+  }
+
+  .circle_img {
+    position: absolute;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  .about_below_right {
+    width: 100% !important;
+  }
+
+  .about_below_right p {
+    text-align: justify !important;
+  }
+
+  .about_below_right .about_points {
+    margin-bottom: 10px !important;
+    justify-content: space-around !important;
+  }
+
+  .home_diseases_sec {
+    align-items: center;
+  }
+
+  .home_up_side {
+    padding: 0 25px !important;
+    width: 100% !important;
+    margin-bottom: 35px !important;
+  }
+
+  .diseases {
+    padding: 20px !important;
+    border-radius: 15px !important;
+    margin: 0 10px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .diseases img {
+    width: 75px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .diseases.h1 {
+    font-size: 24px !important;
+    line-height: 34px !important;
+  }
+
+  .home_service .service {
+    padding: 15px 55px;
+  }
+
+  .home_service .service img {
+    max-height: 130px !important;
+  }
+
+  .home_service .service h3 {
+    font-size: 22px !important;
+    line-height: 32px !important;
+    margin: 25px auto !important;
+  }
+
+  .home_ayur_below_side {
+    flex-direction: column-reverse;
+  }
+
+  .ayur_below_right {
+    display: flex;
+    width: 100%;
+    height: 250px !important;
+    object-fit: cover;
+    justify-content: center;
+    position: relative;
+    border-radius: 0 25px 0 25px !important;
+    overflow: hidden;
+  }
+
+  .ayur_below_right > img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .ayur_below_right:after {
+    width: 20%;
+    height: 75%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .ayur_below_left {
+    width: 100% !important;
+    margin-top: 25px !important;
+  }
+
+  .ayur_below_left p {
+    text-align: justify;
+  }
+
+  .ayurkhyati_points {
+    margin-bottom: 20px !important;
+  }
+
+  .home_testimonial_sec {
+    width: 100% !important;
+    align-items: center;
+  }
+
+  .testi_below_left {
+    width: 100% !important;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 25px !important;
+  }
+
+  .testi_below_right .testimonial_top img {
+    width: 7% !important;
+  }
+
+  .testi_below_right .testimonial_below > p {
+    height: 65% !important;
+  }
+
+  .testimonial_author .testimonaial_author_detail > h5 {
+    font-size: 16px !important;
+    line-height: 21px !important;
+  }
+
+  .testimonial_author .testimonaial_author_detail > p {
+    font-size: 15px !important;
+    line-height: 21px !important;
+  }
+
+  .testi_below_right .testimonial_below .testimonial_author img {
+    width: 55px !important;
+  }
+
+  .site-footer {
+    padding: 30px 20px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .footer-top {
+    width: 90% !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    justify-content: space-evenly;
+  }
+
+  .footer-top .btn {
+    margin: 0 !important;
+  }
+
+  .footer-top .h1 {
+    margin-bottom: 0px !important;
+    font-size: 25px !important;
+  }
+
+  .textwidget.custom-html-widget {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 30% !important;
+    align-items: center;
+    display: flex;
+  }
+
+  .footer-content {
+    width: 70% !important;
+    margin-left: 35px !important;
+  }
+
+  .footer-content p {
+    max-width: 100% !important;
+  }
+
+  .site-footer .widgets {
+    padding: 0 !important;
+    padding-top: 35px !important;
+/*     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
+    width: 98% !important;
+  }
+
+  .widgets.widgets-5 h2 {
+    width: max-content;
+    font-size: 20px !important;
+  }
+
+  .site-footer .widgets .widget a {
+    font-size: 15px !important;
+  }
+  #nav_menu-2,
+  #custom_html-3,
+  #nav_menu-3,
+  #nav_menu-4 {
+    max-width: 30% !important;
+  }
+
+  #custom_html-2 {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 25px !important;
+  }
+
+  #custom_html-2 img {
+    width: 100% !important;
+  }
+
+  #custom_html-3 .textwidget {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer_contact li {
+    align-items: center !important;
+  }
+
+  .bottom-bar {
+    padding: 0 !important;
+    padding-top: 10px !important;
+  }
+
+  footer .bottom-bar .site-info span {
+    display: block !important;
+    font-size: 14px !important;
+  }
+
+  footer .bottom-bar .site-info span a {
+    display: inline-flex !important;
+  }
+
+  footer .bottom-bar .site-info span img {
+    width: 20px !important;
+    margin-top: 10px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px !important;
+  }
+
+  section {
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .larger {
+    font-size: 75px;
+    line-height: 85px;
+    font-weight: 700;
+    color: var(--G10);
+  }
+
+	.large {
+  	font-size: 45px;
+	line-height: 55px;}
+
+
+  .h1 {
+    font-size: 35px !important;
+    line-height: 45px !important;
+  }
+
+  .h3 {
+    font-size: 24px !important;
+    line-height: 34px !important;
+  }
+
+  p {
+    width: 100% !important;
+/*     text-align: center; */
+    font-size: 16px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .btn {
+    column-gap: 20px;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .btn a {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+
+  #masthead {
+    padding: 10px 25px !important;
+  }
+
+  .site-header .site-header-inner {
+    column-gap: 0 !important;
+  }
+
+  .site-header .site-branding {
+    height: 100% !important;
+    padding-right: 20px;
+    width: 55% !important;
+  }
+
+  header img {
+    max-width: 85% !important;
+  }
+
+  .site-header .search-toggle {
+    display: none !important;
+  }
+
+  #search-button {
+    display: none !important;
+  }
+
+  header .btn {
+    display: none !important;
+  }
+
+  nav#site-navigation {
+    display: flex !important;
+  }
+
+  #masthead #mobile-menu-button {
+    margin-bottom: 10px !important;
+  }
+
+  #mobile-navigation{
+    box-shadow: 0 20px 35px 0 rgba(45, 45, 45, 0.2);
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border: 1px solid var(--G_bg);
+    max-height: 80vh;
+    background: var(--white)!important;
+    scrollbar-width: none;
+
+  }
+
+  #mobile-menu-button svg path {
+    fill: var(--secoundary);
+  }
+
+
+  #mobile-navigation li,
+  #mobile-navigation a {
+    border: 0!important;
+    background: var(--white) !important;
+    color: var(--secoundary)!important;
+    font-size: 14px!important;
+  }
+  
+  #mobile-navigation ul.sub-menu{
+    border-radius: 0!important;
+    box-shadow: none;
+    margin-top: -15px!important;
+    padding-left: 35px !important;
+    
+  }
+
+  #mobile-navigation ul li .dropdown-toggle {
+    background: transparent!important;
+    width: 40px;
+    height: 60px;
+  }
+  
+  #mobile-navigation ul.sub-menu li a{
+    font-size: 14px!important;
+    padding: 10px !important;
+    line-height: 2!important;
+  }
+
+  #mobile-navigation ul.sub-menu li:hover a{
+    background: var(--white) !important;
+    color: var(--secoundary)!important;
+  }
+
+  #mobile-navigation ul li a {
+    padding: 10px 15px!important;
+    justify-content: space-between;
+  }
+
+
+  .home_achievement {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .our_achievement {
+    width: 100%;
+    padding-left: 25px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .our_achievement::before {
+    width: 5px;
+  }
+
+  .our_achievement p {
+    padding: 0 !important;
+  }
+
+  .achievements {
+    width: 48%;
+  }
+
+  .achievements:before {
+    left: 5%;
+  }
+
+  .achievements h2 {
+    font-weight: 600;
+  }
+
+  .achievements p {
+    text-align: left;
+    padding: 0 !important;
+  }
+
+  .home_up_side {
+    margin-bottom: 15px !important;
+  }
+
+  .home_up_side h3::before {
+    width: 109px;
+    height: 109px;
+    bottom: 10%;
+    left: 43%;
+  }
+
+  .home_up_side h3 {
+    margin-bottom: 15px !important;
+  }
+  .home_diseases_below_side {
+    width: 100% !important;
+  }
+  .about_below_left {
+    max-width: 85% !important;
+    min-width: 60% !important;
+  }
+
+  .about_below_left > img {
+    width: 48% !important;
+  }
+
+  .about_below_right {
+    width: 100%;
+    margin-top: 25px !important;
+  }
+
+  .about_below_right p {
+    text-align: justify;
+    margin: 20px 0 !important;
+  }
+
+  .about_below_right .about_points {
+    margin-bottom: 25px !important;
+    flex-direction: column;
+  }
+
+  .about_below_right .about_points li {
+    margin: 12px 0 !important;
+  }
+
+  .about_below_right .about_points li:nth-child(1) {
+    margin-top: 0 !important;
+  }
+
+  .home_diseases_section {
+    padding: 20px 0 !important;
+  }
+
+  .home_diseases_section .home_up_side {
+    padding: 0 20px !important;
+  }
+
+  .home_deseases {
+    flex-wrap: nowrap !important;
+    scroll-behavior: smooth;
+    padding: 0 15px;
+    justify-content: flex-start;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .diseases {
+    margin: 25px;
+    margin-left: 0 !important;
+    padding: 25px;
+  }
+
+  .diseases img {
+    margin-bottom: 15px;
+  }
+
+  .diseases h3 {
+    width: max-content !important;
+  }
+
+  .home_service {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service {
+    max-width: fit-content;
+    align-items: center;
+    border-width: 2px !important;
+    border: 2px solid var(--O4);
+    background-color: var(--O1);
+    border-radius: 15px;
+    padding: 20px !important;
+    margin: 15px !important;
+  }
+
+  .service img {
+    min-width: 45% !important;
+  }
+
+  .service h3 {
+    width: 100% !important;
+    margin: 10px 0 !important;
+    margin-bottom: 15px !important;
+    font-size: 28px !important;
+    line-height: 35px !important;
+  }
+
+  .home_ayur_below_side {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px !important;
+  }
+
+  .ayur_below_left {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .ayur_below_left p {
+    text-align: justify;
+    margin: 20px 0 !important;
+  }
+
+  .ayur_below_right {
+    width: 100% !important;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px !important;
+  }
+
+  .ayur_below_right::after {
+    bottom: 0 !important;
+    left: 11% !important;
+  }
+
+  .ayurkhyati_points {
+    margin-bottom: 15px !important;
+  }
+
+  .ayur_point {
+    margin: 5px 0 !important;
+  }
+
+  .ayurkhyati_points ul li .ayur_detais p {
+    margin: 5px 0 !important;
+  }
+
+  .home_testi_below_side {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .testi_below_left,
+  .testi_below_right {
+    width: 100%;
+  }
+
+  .testi_below_left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .testi_below_right {
+    padding: 0 20px !important;
+  }
+
+  .testi_below_right .testimonial_top {
+    margin-bottom: 15px !important;
+  }
+
+  .testi_below_right .testimonial_top img {
+    width: 10% !important;
+  }
+
+  .testimonial_author {
+    margin-top: 15px !important;
+  }
+
+  .home_blog_section {
+    padding: 20px 0 !important;
+  }
+
+  .home_blog_sec {
+    padding: 0 20px !important;
+  }
+
+  .home_blog_below_side {
+    padding: 0 !important;
+  }
+
+  .site-footer {
+    padding: 30px 20px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .footer-top {
+    width: 95% !important;
+    flex-direction: column;
+    padding: 10px !important;
+  }
+
+  .footer-top .h1 {
+    margin-bottom: 15px !important;
+    font-size: 25px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .textwidget.custom-html-widget {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 45% !important;
+    align-items: center;
+    display: flex;
+  }
+
+  .footer-content {
+    width: 55% !important;
+    margin-left: 35px !important;
+  }
+
+  .footer-content p {
+    max-width: 100% !important;
+  }
+
+  .site-footer .widgets {
+    padding: 0 !important;
+    padding-top: 35px !important;
+/*     display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+  }
+
+  #nav_menu-2,
+  #custom_html-3,
+  #nav_menu-3,
+  #nav_menu-4 {
+    width: auto !important;
+    margin-right: 15% !important;
+  }
+
+  #custom_html-2 {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
+  #custom_html-2 img {
+    width: 100% !important;
+  }
+
+  #custom_html-3 .textwidget {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer_contact li {
+    align-items: center !important;
+  }
+
+  .bottom-bar {
+    padding: 0 !important;
+    padding-top: 10px !important;
+  }
+
+  footer .bottom-bar .site-info span {
+    display: block !important;
+    font-size: 14px !important;
+  }
+
+  footer .bottom-bar .site-info span a {
+    display: inline-flex !important;
+  }
+
+  footer .bottom-bar .site-info span img {
+    width: 20px !important;
+    margin-top: 10px !important;
+  }
+	.innerpage_title h1{
+		font-size:30px !important;
+	}
+	.breadcrumb{
+		bottom: 5px !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px !important;
+  }
+
+  section {
+    width: 100%;
+    margin-top: 35px;
+    padding: 0 20px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .larger {
+    font-size: 70px;
+    line-height: 80px;
+    font-weight: 700;
+    color: var(--G10);
+  }
+
+	.innerpage_title h1{
+		font-size:24px !important;
+		top:0px !important;
+	}
+
+  .h1 {
+    font-size: 30px !important;
+    line-height: 40px !important;
+  }
+
+  .h3 {
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+
+  p {
+    width: 100% !important;
+/*     text-align: center; */
+    font-size: 14px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #masthead {
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px !important;
+  }
+
+  header img {
+    max-width: 100% !important;
+  }
+
+  .site-header .site-branding {
+    min-width: 60% !important;
+  }
+
+  .btn a {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+
+
+
+  .home_achievement {
+    display: block;
+  }
+
+  .achievements {
+    width: 100%;
+    width: 100%;
+    margin: 15px 0;
+  }
+  .home_up_side h3::before {
+    width: 109px;
+    height: 109px;
+    bottom: 10%;
+    left: 35%;
+  }
+
+  .about_below_left {
+    width: 100%;
+  }
+
+  .circle_img {
+    display: none !important;
+  }
+
+  .home_deseases {
+    flex-wrap: nowrap !important;
+    scroll-behavior: smooth;
+    padding: 0 15px;
+    justify-content: flex-start;
+    overflow: scroll !important;
+    width: 100% !important;
+  }
+
+  .home_service {
+    display: block;
+    width: 100% !important;
+    align-items: center;
+    margin-top: 0px !important;
+  }
+
+  .service {
+    margin: 15px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .service h3 {
+    text-align: center;
+  }
+
+  .ayur_below_right::after {
+    display: none;
+  }
+  .home_diseases_section {
+    padding: 40px 0 !important;
+  }
+
+  .home_diseases_below_side {
+    width: 100% !important;
+  }
+
+  .home_blog_section {
+    padding: 40px 0 !important;
+    padding-bottom: 25px !important;
+  }
+
+  .site-footer {
+    padding: 30px 20px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .footer-top {
+    width: 95% !important;
+    flex-direction: column;
+    padding: 10px !important;
+  }
+
+  .footer-top h1 {
+    margin-bottom: 15px !important;
+    font-size: 25px !important;
+  }
+
+  .textwidget.custom-html-widget {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .footer-logo {
+    min-width: 100% !important;
+  }
+
+  .footer-content {
+    min-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .footer-content p {
+    text-align: justify;
+  }
+
+  .site-footer .widgets {
+    padding: 0 !important;
+    padding-top: 35px !important;
+  }
+
+  #custom_html-2,
+  #nav_menu-2,
+  #custom_html-3,
+  #nav_menu-3,
+  #nav_menu-4 {
+    width: 100% !important;
+  }
+
+  #custom_html-2 img {
+    width: 100% !important;
+  }
+
+  .footer-top h3 {
+    margin-bottom: 15px !important;
+  }
+
+  .footer-content p {
+    max-width: 100% !important;
+  }
+
+  .footer_contact li {
+    align-items: center !important;
+  }
+
+  .bottom-bar {
+    padding: 0 !important;
+    padding-top: 10px !important;
+  }
+
+  footer .bottom-bar .site-info span {
+    display: block !important;
+    font-size: 14px !important;
+  }
+
+  footer .bottom-bar .site-info span a {
+    display: inline-flex !important;
+  }
+
+  footer .bottom-bar .site-info span img {
+    width: 20px !important;
+    margin-top: 10px !important;
+  }
+}
+
+/* 404 */
+h2.hj-404-title {
+    font-size: 130px;
+    line-height: 140px;
+    padding-bottom: 30px;
+}
+.four-o-four-btn-wrapper {
+    display: flex;
+    column-gap: 30px;
+    justify-content: center;
+}
+
+/* mobile bottom fixed buttons */
+.mobile-only-cta {
+    display: none;
+}
+@media (max-width:767px) {
+	.footer-book-consultation-wrapper, .fixed-whatsapp-wrapper {
+    	display: none;
+	}
+	.mobile-only-cta {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: 999;
+	}
+	.mobile-only-cta-wrapper {
+    	display: flex;
+		text-align: center;
+	}
+	.mobile-only-cta-col1 {
+    	background-color: #ff6f00;
+    	padding: 10px;
+    	width: 50%;
+	}
+	.mobile-only-cta-col2 {
+    	background-color: #4bae4f;
+    	padding: 10px;
+    	width: 50%;
+	}
+	.mobile-only-cta-wrapper h6 {
+    	color: #ffffff;
+	}
+	.four-o-four-btn-wrapper {
+    	flex-direction: column;
+	}
+	div#primary {
+    	padding: 30px 20px !important;
+	}
+	.four-o-four-btn-wrapper .btn {
+    	margin-bottom: 15px;
+	}
+}
+@media (min-width:768px) and (max-width:1024px) {
+	.four-o-four-btn-wrapper {
+    	flex-direction: column;
+	}
+	.four-o-four-btn-wrapper .btn {
+    	margin-bottom: 15px;
+	}
+	div#primary {
+    	padding: 30px 20px !important;
+	}
+}
