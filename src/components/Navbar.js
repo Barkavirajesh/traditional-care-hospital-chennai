@@ -11,94 +11,134 @@ const navStyle = {
 
 export default function Navbar() {
   return (
-    <nav
-      style={{
-        display: "flex",
-        alignItems: "center",
-        minHeight: 80,
-        boxShadow: "0 2px 16px #c5ecd6",
-        background: "transparent", // No green!
-        padding: 0,
-        position: "relative"
-      }}
-    >
-      {/* LOGO - fully outside green bar */}
-      <div
+    <>
+      <nav
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-start",
-          zIndex: 2
-        }}
-      >
-        <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <img
-            src="/tch-image.jpg"
-            alt="Traditional Care Hospital Logo"
-            style={{
-              width: 150,        // Horizontal size as needed
-              height: "auto",
-              borderRadius: 12,
-              background: "#fff",
-              objectFit: "contain",
-              boxShadow: "0 0 8px rgba(0,0,0,0.15)",
-              padding: "2px",
-              margin: "8px 8px 8px 28px"
-            }}
-          />
-        </Link>
-      </div>
-      {/* NAV LINKS: green bar starts exactly from 'Home' */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          background: "#1c954d",
           minHeight: 80,
-          padding: "0 0 0 0",  // no left padding; starts at "Home"
-          borderRadius: "0 0 14px 0",
-          width: "100%",
-          flex: 1,
-          justifyContent: "flex-end"
+          boxShadow: "0 2px 16px #c5ecd6",
+          background: "transparent",
+          padding: 0,
+          position: "relative"
         }}
       >
-        <ul
+        {/* LOGO */}
+        <div
           style={{
-            listStyle: "none",
             display: "flex",
             alignItems: "center",
-            gap: 18,
-            margin: 0,
-            padding: "0 32px 0 0", // right padding only
-            justifyContent: "flex-end",
-            flex: 1
+            justifyContent: "flex-start",
+            zIndex: 2
           }}
         >
-          <li><Link to="/" style={navStyle}>Home</Link></li>
-          <li><Link to="/about" style={navStyle}>About Us</Link></li>
-          
-          <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
-          <li><Link to="/services" style={navStyle}>Services</Link></li>
-          <li><Link to="/contact" style={navStyle}>Contact Us</Link></li>
-          <li>
-            <Link
-              to="/appointment"
-              className="cta-btn"
+          <Link
+            to="/"
+            style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+          >
+            <img
+              src="/tch-image.jpg"
+              alt="Traditional Care Hospital Logo"
               style={{
-                background: "#FEC534",
-                color: "#106336",
-                padding: "8px 18px",
-                borderRadius: 8,
-                fontWeight: 700,
-                marginLeft: 6,
-                textDecoration: "none"
+                width: 150,
+                height: "auto",
+                borderRadius: 12,
+                background: "#fff",
+                objectFit: "contain",
+                boxShadow: "0 0 8px rgba(0,0,0,0.15)",
+                padding: "2px",
+                margin: "8px 8px 8px 28px"
               }}
-            >
-              Book an Appointment
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            />
+          </Link>
+        </div>
+
+        {/* NAV LINKS */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            background: "#1c954d",
+            minHeight: 80,
+            padding: "0",
+            borderRadius: "0 0 14px 0",
+            width: "100%",
+            flex: 1,
+            justifyContent: "flex-end"
+          }}
+        >
+          <ul
+            style={{
+              listStyle: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: 18,
+              margin: 0,
+              padding: "0 32px 0 0",
+              justifyContent: "flex-end",
+              flex: 1
+            }}
+          >
+            <li><Link to="/" style={navStyle}>Home</Link></li>
+            <li><Link to="/about" style={navStyle}>About Us</Link></li>
+            <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
+            <li><Link to="/services" style={navStyle}>Services</Link></li>
+            <li><Link to="/contact" style={navStyle}>Contact Us</Link></li>
+            <li>
+              <Link
+                to="/appointment"
+                className="cta-btn"
+                style={{
+                  background: "#FEC534",
+                  color: "#106336",
+                  padding: "8px 18px",
+                  borderRadius: 8,
+                  fontWeight: 700,
+                  marginLeft: 6,
+                  textDecoration: "none"
+                }}
+              >
+                Book an Appointment
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* RESPONSIVE MOBILE STYLES */}
+      <style>
+        {`
+        @media (max-width: 768px) {
+          nav {
+            flex-direction: column !important;
+            min-height: auto !important;
+          }
+
+          nav > div:nth-child(2) {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+
+          nav ul {
+            flex-direction: column !important;
+            width: 100% !important;
+            padding: 12px 0 !important;
+            gap: 12px !important;
+            justify-content: center !important;
+          }
+
+          nav ul li {
+            width: 100%;
+            text-align: center;
+          }
+
+          .cta-btn {
+            width: 90% !important;
+            display: inline-block;
+          }
+        }
+      `}
+      </style>
+    </>
   );
 }
