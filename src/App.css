@@ -797,7 +797,7 @@ section[style] {
     left: 20px;
     bottom: 15px;
   }
-
+}
 /* 💚 FULL MOBILE RESPONSIVE FIXES 💚 */
 
 @media (max-width: 768px) {
@@ -872,4 +872,8 @@ section[style] {
     padding: 18px 12px !important;
   }
 }
-
+@media (max-width: 420px) {
+  .treatment-hero-img {
+    width: 92vw;
+  }
+}
