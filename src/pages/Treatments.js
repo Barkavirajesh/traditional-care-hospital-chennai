@@ -1,4 +1,7 @@
 import React from "react";
+import heroImg from "./assets/image4.jpg";
+import heroBg from "./assets/image9.jpg";
+import doctorImg from "./assets/doctor.jpg";
 
 // ---- BEGIN TREATMENTS DATA ----
 const treatments = [
@@ -53,31 +56,16 @@ const treatments = [
     details: [
       "Dosha-Based Diet Plan",
       "Yoga Therapy",
-      "Chronic Recovery Support"
+      "Chronic Recovery Support",
     ],
   },
 ];
-
-const heroImg = "/image4.jpg"; // Update with your hero image path
-const doctorImg = "/doctor.jpg"; // Path to Dr. Rajalakshmi's image (or any doctor image)
 
 const treatmentStats = [
   { label: "Therapies", value: "12+" },
   { label: "Certified Experts", value: "5+" },
   { label: "Recovery Rate", value: "95%" },
 ];
-
-function MarqIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 33 33" style={{margin: "0 10px", verticalAlign:"middle"}}>
-      <g>
-        <ellipse cx="16.5" cy="16.5" rx="8.5" ry="8.5" stroke="#ffc13b" strokeWidth="2.1" fill="#f9fbe9"/>
-        <path d="M13.5 21 Q12.5 19, 16.5 15 Q20.5 19, 19.5 21" stroke="#18804c" strokeWidth="1.2" fill="none"/>
-        <circle cx="16.5" cy="16.5" r="2" fill="#c7e6c5"/>
-      </g>
-    </svg>
-  );
-}
 
 function TreatmentCard({ tr, idx }) {
   return (
@@ -100,15 +88,16 @@ function TreatmentCard({ tr, idx }) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        animationDelay: `${idx * 0.17}s`
+        animationDelay: `${idx * 0.17}s`,
       }}
-      onMouseEnter={e => {
+      onMouseEnter={(e) => {
         e.currentTarget.style.transform = "scale(1.035)";
         e.currentTarget.style.boxShadow = "0 20px 42px #19cc8380";
       }}
-      onMouseLeave={e => {
+      onMouseLeave={(e) => {
         e.currentTarget.style.transform = "scale(1)";
-        e.currentTarget.style.boxShadow = "0 10px 25px rgba(30,150,100,0.12), 0 0 0 1px rgba(25,140,90,0.05)";
+        e.currentTarget.style.boxShadow =
+          "0 10px 25px rgba(30,150,100,0.12), 0 0 0 1px rgba(25,140,90,0.05)";
       }}
     >
       <div style={{ fontSize: "2.3rem", marginBottom: 8 }}>{tr.icon}</div>
@@ -121,7 +110,7 @@ function TreatmentCard({ tr, idx }) {
           letterSpacing: ".02em",
           textAlign: "center",
           width: "100%",
-          maxWidth: "340px"
+          maxWidth: "340px",
         }}
       >
         {tr.title}
@@ -134,7 +123,7 @@ function TreatmentCard({ tr, idx }) {
           marginBottom: 10,
           textAlign: "center",
           width: "100%",
-          maxWidth: "360px"
+          maxWidth: "360px",
         }}
       >
         {tr.desc}
@@ -150,11 +139,13 @@ function TreatmentCard({ tr, idx }) {
           listStylePosition: "inside",
           maxWidth: "340px",
           width: "100%",
-          display: "inline-block"
+          display: "inline-block",
         }}
       >
         {tr.details.map((d, i) => (
-          <li key={i} style={{ marginBottom: 6 }}>{d}</li>
+          <li key={i} style={{ marginBottom: 6 }}>
+            {d}
+          </li>
         ))}
       </ul>
     </div>
@@ -167,21 +158,31 @@ export default function Treatments() {
   for (let i = 0; i < treatments.length; i += 2) {
     if (i + 1 === treatments.length) {
       rows.push(
-        <div key={"row-" + i} className="treatment-row" style={{
-  display: "flex",
-  justifyContent: "center",
-  gap: "36px",
-  marginBottom: "44px"
-}}>
-
+        <div
+          key={"row-" + i}
+          className="treatment-row"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "36px",
+            marginBottom: "44px",
+          }}
+        >
           <TreatmentCard tr={treatments[i]} idx={i} />
         </div>
       );
     } else {
       rows.push(
-        <div key={"row-" + i} style={{
-          display: "flex", justifyContent: "center", gap: "36px", marginBottom: "44px"
-        }}>
+        <div
+          key={"row-" + i}
+          className="treatment-row"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "36px",
+            marginBottom: "44px",
+          }}
+        >
           <TreatmentCard tr={treatments[i]} idx={i} />
           <TreatmentCard tr={treatments[i + 1]} idx={i + 1} />
         </div>
@@ -191,118 +192,29 @@ export default function Treatments() {
 
   return (
     <div style={{ width: "100vw", overflowX: "hidden", background: "#f3fff8" }}>
-      <style>{`
-        .treatment-hero-bg {
-          width: 100vw;
-          background: url('/image9.jpg') no-repeat center center/cover;
-          padding: 65px 0 65px 0;
-          min-height: 470px;
-          display: flex;
-          align-items: center;
-          box-sizing: border-box;
-        }
-        .treatment-hero-content {
-          max-width: 1220px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 1.3fr;
-          gap: 60px;
-          align-items: center;
-          width: 100vw;
-          padding: 0 5vw;
-        }
-        .treatment-hero-img {
-          width: 390px;
-          height: 370px;
-          object-fit: cover;
-          box-shadow: 0 6px 38px rgba(41,108,45,0.24);
-          background: #fff;
-          border-radius: 24px;
-        }
-        .treatment-hero-right h2 {
-          font-size: 2.7rem;
-          font-weight: 900;
-          color: #15804b;
-          margin-bottom: 16px;
-          line-height: 1.11;
-          letter-spacing: .04em;
-        }
-        .treatment-hero-right p {
-          font-size: 1.25rem;
-          color: #245f42;
-          line-height: 1.58;
-          margin-bottom: 22px;
-        }
-        .treatment-hero-right ul {
-          color: #1a783c;
-          font-weight: 600;
-          font-size: 1.09rem;
-          line-height: 1.7;
-          margin: 0;
-          list-style-type: disc;
-          padding-left: 22px;
-        }
-        .doctor-banner {
-          margin-top: 60px;
-          background: linear-gradient(90deg, #15bd69, #17ddb2);
-          color: #fff;
-          text-align: center;
-          padding: 30px 20px;
-          border-radius: 16px;
-          max-width: 560px;
-          margin-left: auto;
-          margin-right: auto;
-          box-shadow: 0 6px 24px rgba(0,0,0,0.10);
-        }
-        .doctor-banner-img {
-          width: 68px;
-          height: 68px;
-          object-fit: cover;
-          border-radius: 50%;
-          border: 4px solid #e4fff4;
-          margin-bottom: 12px;
-          box-shadow: 0 4px 16px #1e836618;
-        }
-        @media (max-width: 980px) {
-          .treatment-hero-content { grid-template-columns: 1fr; gap: 5vw; padding: 0 3vw;}
-          .treatment-hero-img { width: 80vw; height: 240px;}
-          .treatment-hero-bg { padding: 32px 0 32px 0; min-height: 270px;}
-        }
-          @media (max-width: 600px) {
-  .treatment-row {
-    flex-direction: column !important;
-    gap: 22px !important;
-    align-items: center;
-  }
-}
-  @media (max-width: 600px) {
-  .animatedCard {
-    max-width: 92vw !important;
-    min-width: 92vw !important;
-    padding: 24px 16px !important;
-  }
-}
-
-
-      `}</style>
-
       {/* HERO SECTION */}
-      <div className="treatment-hero-bg">
-        <div className="treatment-hero-content">
-          <img
-            src={heroImg}
-            alt="Treatments Hero"
-            className="treatment-hero-img"
-          />
+      <div
+        className="treatment-hero-bg"
+        style={{
+          background: `url(${heroBg}) no-repeat center center/cover`,
+          padding: "65px 0",
+          minHeight: "470px",
+          display: "flex",
+          alignItems: "center",
+          boxSizing: "border-box",
+        }}
+      >
+        <div className="treatment-hero-content" style={{ maxWidth: "1220px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: "60px", alignItems: "center", width: "100vw", padding: "0 5vw" }}>
+          <img src={heroImg} alt="Treatments Hero" className="treatment-hero-img" style={{ width: "390px", height: "370px", objectFit: "cover", boxShadow: "0 6px 38px rgba(41,108,45,0.24)", background: "#fff", borderRadius: "24px" }} />
           <div className="treatment-hero-right">
-            <h2>
+            <h2 style={{ fontSize: "2.7rem", fontWeight: 900, color: "#15804b", marginBottom: 16, lineHeight: 1.11, letterSpacing: ".04em" }}>
               Explore Our<br />Authentic Siddha Treatments
             </h2>
-            <p>
+            <p style={{ fontSize: "1.25rem", color: "#245f42", lineHeight: 1.58, marginBottom: 22 }}>
               Discover holistic therapies for pain relief, wellness, chronic ailments and rejuvenation.
               Our certified Siddha practitioners tailor each therapy and medicine to your unique mind-body needs.
             </p>
-            <ul>
+            <ul style={{ color: "#1a783c", fontWeight: 600, fontSize: "1.09rem", lineHeight: 1.7, margin: 0, listStyleType: "disc", paddingLeft: 22 }}>
               <li>Therapies: massage, detox, mind-body care</li>
               <li>Personalized Disease Management</li>
               <li>Holistic diet & rejuvenation support</li>
@@ -310,96 +222,28 @@ export default function Treatments() {
           </div>
         </div>
       </div>
+
       {/* STATS ROW */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "stretch",
-          gap: "32px",
-          width: "100%",
-          maxWidth: "850px",
-          margin: "0 auto 44px auto",
-        }}
-      >
+      <div className="stats-container" style={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: "32px", width: "100%", maxWidth: "850px", margin: "0 auto 44px auto" }}>
         {treatmentStats.map(({ label, value }) => (
-          <div
-            key={label}
-            style={{
-              background: "#eaf8f1",
-              border: "2px solid #19b17b",
-              borderRadius: "13px",
-              flex: "1 1 160px",
-              minWidth: "100px",
-              maxWidth: "220px",
-              padding: "16px 6px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              boxSizing: "border-box",
-            }}
-          >
-            <span
-              style={{
-                fontWeight: 800,
-                fontSize: "1.7rem",
-                color: "#15a463",
-                marginBottom: "5px",
-              }}
-            >
-              {value}
-            </span>
-            <span
-              style={{
-                color: "#19b17b",
-                fontWeight: 600,
-                fontSize: "1.07rem",
-                textAlign: "center"
-              }}
-            >
-              {label}
-            </span>
+          <div key={label} style={{ background: "#eaf8f1", border: "2px solid #19b17b", borderRadius: "13px", flex: "1 1 160px", minWidth: "100px", maxWidth: "220px", padding: "16px 6px", display: "flex", flexDirection: "column", alignItems: "center", boxSizing: "border-box" }}>
+            <span style={{ fontWeight: 800, fontSize: "1.7rem", color: "#15a463", marginBottom: 5 }}>{value}</span>
+            <span style={{ color: "#19b17b", fontWeight: 600, fontSize: "1.07rem", textAlign: "center" }}>{label}</span>
           </div>
         ))}
       </div>
+
       {/* CARD ROWS */}
-      <div
-        style={{
-          maxWidth: "990px",
-          margin: "0 auto",
-          padding: "0 18px",
-        }}
-      >
-        {rows}
-      </div>
-      {/* Doctor Banner Section */}
-      <div className="doctor-banner">
-        {doctorImg &&
-          <img
-            src={doctorImg}
-            alt="Dr. D. Rajalakshmi"
-            className="doctor-banner-img"
-          />
-        }
-        <h3 style={{ fontWeight: 800, fontSize: "1.3rem", marginBottom: "7px" }}>
-          👩‍⚕️ Guided by Dr. D. Rajalakshmi
-        </h3>
-        <p style={{ fontSize: "1.08rem", marginBottom: "10px" }}>
+      <div style={{ maxWidth: "990px", margin: "0 auto", padding: "0 18px" }}>{rows}</div>
+
+      {/* Doctor Banner */}
+      <div className="doctor-banner" style={{ marginTop: 60, background: "linear-gradient(90deg, #15bd69, #17ddb2)", color: "#fff", textAlign: "center", padding: "30px 20px", borderRadius: 16, maxWidth: 560, marginLeft: "auto", marginRight: "auto", boxShadow: "0 6px 24px rgba(0,0,0,0.10)" }}>
+        {doctorImg && <img src={doctorImg} alt="Dr. D. Rajalakshmi" className="doctor-banner-img" style={{ width: 68, height: 68, objectFit: "cover", borderRadius: "50%", border: "4px solid #e4fff4", marginBottom: 12, boxShadow: "0 4px 16px #1e836618" }} />}
+        <h3 style={{ fontWeight: 800, fontSize: "1.3rem", marginBottom: 7 }}>👩‍⚕️ Guided by Dr. D. Rajalakshmi</h3>
+        <p style={{ fontSize: "1.08rem", marginBottom: 10 }}>
           Siddha Physician, 20+ years of holistic healing expertise at Traditional Care Hospital.
         </p>
-        <button
-          style={{
-            background: "#fff",
-            color: "#14804b",
-            border: "none",
-            borderRadius: "8px",
-            padding: "10px 22px",
-            fontWeight: 700,
-            fontSize: "1rem",
-            cursor: "pointer",
-            transition: "0.2s",
-            marginTop: "8px"
-          }}
+        <button style={{ background: "#fff", color: "#14804b", border: "none", borderRadius: 8, padding: "10px 22px", fontWeight: 700, fontSize: "1rem", cursor: "pointer", transition: "0.2s", marginTop: 8 }}
           onClick={() => (window.location.href = "/appointment")}
           onMouseOver={e => (e.target.style.background = "#e4fff4")}
           onMouseOut={e => (e.target.style.background = "#fff")}
@@ -407,7 +251,6 @@ export default function Treatments() {
           Book Consultation
         </button>
       </div>
-      {/* Add Marquee or other bottom sections below as needed */}
     </div>
   );
 }
