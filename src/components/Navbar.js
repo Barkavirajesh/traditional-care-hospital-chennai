@@ -22,7 +22,7 @@ export default function Navbar() {
           minHeight: 80,
           padding: "0 20px",
           background: "transparent",
-          boxShadow: "0 2px 16px #c5ecd6",
+          boxShadow: "0 2px 16px #0e8642ff",
           position: "relative",
           zIndex: 10
         }}
