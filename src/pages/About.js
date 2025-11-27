@@ -349,4 +349,100 @@ export default function AboutUsHeroSection() {
       </div>
     </section>
   );
+  
 }
+
+<style>
+{`
+@media (max-width: 768px) {
+
+  /* --- GLOBAL FIXES --- */
+  section {
+    padding: 40px 0 !important;
+    width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* --- IMAGE + TEXT (TOP SECTION) --- */
+  .about-top {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 25px !important;
+  }
+
+  .about-top img {
+    width: 90% !important;
+    height: auto !important;
+    margin: auto !important;
+  }
+
+  .about-top h2 {
+    font-size: 1.9rem !important;
+  }
+
+  .about-top p {
+    font-size: 1.05rem !important;
+    padding: 0 20px !important;
+  }
+
+  /* --- STATS ROW --- */
+  .stats-row {
+    flex-wrap: wrap !important;
+    gap: 18px !important;
+    padding: 0 20px !important;
+  }
+
+  .stats-row div {
+    min-width: 45% !important;
+    max-width: 48% !important;
+  }
+
+  /* --- SERVICES SECTION --- */
+  .services-container {
+    flex-direction: column !important;
+    border-bottom: none !important;
+  }
+
+  .services-container > div {
+    width: 90% !important;
+    margin-bottom: 20px !important;
+    border-right: none !important;
+    border-bottom: 2px solid #19995d !important;
+    padding-bottom: 20px !important;
+  }
+
+  .services-container img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  /* --- PROGRESS BAR SECTION --- */
+  .progress-grid {
+    grid-template-columns: 1fr !important;
+    padding: 20px !important;
+  }
+
+  .progress-grid h2 {
+    font-size: 1.9rem !important;
+  }
+
+  .progress-grid p {
+    font-size: 1rem !important;
+  }
+
+  .progress-grid img {
+    width: 90% !important;
+    height: auto !important;
+    margin: auto !important;
+  }
+
+  .progress-grid .sidha-tag {
+    font-size: 1.4rem !important;
+    padding: 10px 20px !important;
+    left: 20px !important;
+    bottom: 20px !important;
+  }
+
+}
+`}
+</style>
