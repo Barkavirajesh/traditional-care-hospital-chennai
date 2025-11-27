@@ -1,178 +1,204 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
+const navStyle = {
+  color: "#fff",
+  fontSize: "1.08rem",
+  fontWeight: 500,
+  textDecoration: "none",
+  padding: "8px 14px"
+};
 
-  const navStyle = {
-    color: "#fff",
-    fontSize: "1.08rem",
-    fontWeight: 500,
-    textDecoration: "none",
-    padding: "8px 14px"
-  };
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-     <nav
-  style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    minHeight: 80,
-    padding: "0 20px",
-    background: "#1c954d",       // ✅ restored green background
-    borderRadius: "0 0 14px 0",   // ✅ restored your curved edge
-    boxShadow: "0 2px 16px #c5ecd6",
-    position: "relative",
-    zIndex: 10
-  }}
->
-
-      
+      <nav
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          minHeight: 80,
+          boxShadow: "0 2px 16px #c5ecd6",
+          background: "transparent",
+          padding: 0,
+          position: "relative",
+          zIndex: 10
+        }}
+      >
         {/* LOGO */}
-        <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src="/tch-image.jpg"
-            alt="Traditional Care Hospital Logo"
-            style={{
-              width: 150,
-              height: "auto",
-              borderRadius: 12,
-              background: "#fff",
-              objectFit: "contain",
-              boxShadow: "0 0 8px rgba(0,0,0,0.15)",
-              padding: "2px",
-              margin: "8px"
-            }}
-          />
-        </Link>
-
-        {/* DESKTOP NAV */}
-        <ul
-          className="desktop-menu"
+        <div
           style={{
-            listStyle: "none",
             display: "flex",
-            gap: 18,
-            alignItems: "center"
+            alignItems: "center",
+            justifyContent: "flex-start",
+            paddingLeft: 20,
+            zIndex: 20
           }}
         >
-          <li><Link to="/" style={navStyle}>Home</Link></li>
-          <li><Link to="/about" style={navStyle}>About Us</Link></li>
-          <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
-          <li><Link to="/services" style={navStyle}>Services</Link></li>
-          <li><Link to="/contact" style={navStyle}>Contact Us</Link></li>
-          <li>
-            <Link
-              to="/appointment"
+          <Link
+            to="/"
+            style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+          >
+            <img
+              src="/tch-image.jpg"
+              alt="Traditional Care Hospital Logo"
               style={{
-                background: "#FEC534",
-                color: "#106336",
-                padding: "8px 18px",
-                borderRadius: 8,
-                fontWeight: 700,
-                textDecoration: "none"
+                width: 150,
+                height: "auto",
+                borderRadius: 12,
+                background: "#fff",
+                objectFit: "contain",
+                boxShadow: "0 0 8px rgba(0,0,0,0.15)",
+                padding: "2px",
+                margin: "8px"
               }}
-            >
-              Book Appointment
-            </Link>
-          </li>
-        </ul>
+            />
+          </Link>
+        </div>
+
+        {/* GREEN NAVBAR RIGHT SECTION */}
+        <div
+          className="desktop-menu"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            background: "#1c954d",
+            minHeight: 80,
+            padding: "0",
+            borderRadius: "0 0 14px 0",
+            flex: 1,
+            justifyContent: "flex-end"
+          }}
+        >
+          <ul
+            style={{
+              listStyle: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: 24,
+              margin: 0,
+              padding: "0 32px 0 0",
+              justifyContent: "flex-end"
+            }}
+          >
+            <li><Link to="/" style={navStyle}>Home</Link></li>
+            <li><Link to="/about" style={navStyle}>About Us</Link></li>
+            <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
+            <li><Link to="/services" style={navStyle}>Services</Link></li>
+            <li><Link to="/contact" style={navStyle}>Contact Us</Link></li>
+            <li>
+              <Link
+                to="/appointment"
+                style={{
+                  background: "#FEC534",
+                  color: "#106336",
+                  padding: "10px 18px",
+                  borderRadius: 8,
+                  fontWeight: 700,
+                  textDecoration: "none"
+                }}
+              >
+                Book an Appointment
+              </Link>
+            </li>
+          </ul>
+        </div>
 
         {/* MOBILE HAMBURGER */}
         <div
           className="hamburger"
-          onClick={() => setOpen(!open)}
+          style={{
+            display: "none",
+            flexDirection: "column",
+            cursor: "pointer",
+            padding: "10px 20px",
+            position: "absolute",
+            right: 10,
+            top: 22,
+            zIndex: 30
+          }}
+          onClick={() => setIsOpen(!isOpen)}
         >
-          <span className={open ? "line line1 open" : "line line1"}></span>
-          <span className={open ? "line line2 open" : "line line2"}></span>
-          <span className={open ? "line line3 open" : "line line3"}></span>
+          <span style={{
+            height: 3,
+            width: 28,
+            background: "#106336",
+            marginBottom: 6,
+            transition: "0.3s"
+          }} />
+          <span style={{
+            height: 3,
+            width: 28,
+            background: "#106336",
+            marginBottom: 6,
+            transition: "0.3s"
+          }} />
+          <span style={{
+            height: 3,
+            width: 28,
+            background: "#106336",
+            transition: "0.3s"
+          }} />
         </div>
-      </nav>
 
-      {/* MOBILE MENU */}
-      {open && (
-        <div className="mobile-menu">
-          <Link to="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link to="/about" onClick={() => setOpen(false)}>About Us</Link>
-          <Link to="/treatments" onClick={() => setOpen(false)}>Treatments</Link>
-          <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
-          <Link to="/contact" onClick={() => setOpen(false)}>Contact Us</Link>
-          <Link
-            to="/appointment"
-            onClick={() => setOpen(false)}
+        {/* MOBILE MENU */}
+        {isOpen && (
+          <ul
             style={{
-              background: "#FEC534",
-              color: "#106336",
-              padding: "10px",
-              borderRadius: 8,
-              marginTop: 10
+              position: "absolute",
+              top: 80,
+              right: 0,
+              width: "100%",
+              background: "#1c954d",
+              listStyle: "none",
+              padding: "20px 0",
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 18,
+              zIndex: 25
             }}
           >
-            Book Appointment
-          </Link>
-        </div>
-      )}
+            <li><Link to="/" style={navStyle}>Home</Link></li>
+            <li><Link to="/about" style={navStyle}>About Us</Link></li>
+            <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
+            <li><Link to="/services" style={navStyle}>Services</Link></li>
+            <li><Link to="/contact" style={navStyle}>Contact Us</Link></li>
+            <li>
+              <Link
+                to="/appointment"
+                style={{
+                  background: "#FEC534",
+                  color: "#106336",
+                  padding: "10px 18px",
+                  borderRadius: 8,
+                  fontWeight: 700,
+                  textDecoration: "none"
+                }}
+              >
+                Book an Appointment
+              </Link>
+            </li>
+          </ul>
+        )}
+      </nav>
 
-      {/* CSS */}
+      {/* RESPONSIVE CSS */}
       <style>
         {`
-        /* DESKTOP SHOW, MOBILE HIDE */
-        .desktop-menu {
-          display: flex;
-        }
-
-        .hamburger {
-          width: 30px;
-          height: 26px;
-          display: none;
-          flex-direction: column;
-          justify-content: space-between;
-          cursor: pointer;
-          z-index: 100;
-        }
-
-        .line {
-          height: 3px;
-          width: 100%;
-          background: #106336;
-          border-radius: 3px;
-          transition: 0.3s;
-        }
-
-        /* HAMBURGER ANIMATION */
-        .line1.open { transform: rotate(45deg) translate(5px, 6px); }
-        .line2.open { opacity: 0; }
-        .line3.open { transform: rotate(-45deg) translate(6px, -7px); }
-
-        /* MOBILE MENU */
-        .mobile-menu {
-          display: flex;
-          flex-direction: column;
-          background: #1c954d;
-          padding: 20px;
-          gap: 18px;
-        }
-
-        .mobile-menu a {
-          color: #fff;
-          text-decoration: none;
-          font-size: 1.1rem;
-          font-weight: 500;
-        }
-
-        /* MOBILE STYLES */
         @media (max-width: 768px) {
           .desktop-menu {
             display: none !important;
           }
 
           .hamburger {
-            display: flex;
+            display: flex !important;
           }
         }
-        `}
+      `}
       </style>
     </>
   );
