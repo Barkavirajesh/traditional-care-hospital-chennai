@@ -63,7 +63,7 @@ const treatmentStats = [
 function TreatmentCard({ tr, idx }) {
   return (
     <div
-      className="animatedCard"
+      className="treatment-card animatedCard"
       style={{
         background: "rgba(255,255,255,0.86)",
         borderRadius: "22px",
@@ -73,7 +73,6 @@ function TreatmentCard({ tr, idx }) {
         backdropFilter: "blur(6px)",
         borderLeft: "6px solid #16a34a",
         maxWidth: "420px",
-        minWidth: "270px",
         width: "100%",
         marginBottom: "24px",
         textAlign: "center",
@@ -296,12 +295,7 @@ export default function Treatments() {
         }}
       >
         {treatments.map((tr, idx) => (
-          <TreatmentCard
-            key={idx}
-            tr={tr}
-            idx={idx}
-            style={{ flex: "1 1 calc(50% - 18px)" }}
-          />
+          <TreatmentCard key={idx} tr={tr} idx={idx} />
         ))}
       </div>
 
@@ -359,6 +353,20 @@ export default function Treatments() {
           Book Consultation
         </button>
       </div>
+
+      {/* RESPONSIVE CSS FOR CARDS */}
+      <style>
+        {`
+          .treatment-card {
+            flex: 1 1 calc(50% - 18px); /* 2 columns on desktop */
+          }
+          @media (max-width: 768px) {
+            .treatment-card {
+              flex: 1 1 100%; /* 1 column on mobile */
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
