@@ -797,4 +797,79 @@ section[style] {
     left: 20px;
     bottom: 15px;
   }
+
+/* 💚 FULL MOBILE RESPONSIVE FIXES 💚 */
+
+@media (max-width: 768px) {
+  /* Hero Section Text */
+  .treatment-hero-right h2 {
+    font-size: 1.9rem !important;
+    text-align: center !important;
+  }
+
+  .treatment-hero-right p {
+    font-size: 1.05rem !important;
+    text-align: center !important;
+  }
+
+  .treatment-hero-right ul {
+    font-size: 1rem !important;
+    text-align: left !important;
+    padding-left: 18px !important;
+  }
+
+  /* Stats Section */
+  .stats-container {
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .stats-container div {
+    max-width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Cards Layout (global fix) */
+  .treatment-row {
+    flex-direction: column !important;
+    gap: 24px !important;
+    align-items: center !important;
+  }
+
+  .animatedCard {
+    max-width: 90vw !important;
+    min-width: 90vw !important;
+  }
+
+  /* Doctor Banner */
+  .doctor-banner {
+    margin: 45px 12px !important;
+    padding: 24px !important;
+  }
+
+  .doctor-banner h3 {
+    font-size: 1.18rem !important;
+  }
+
+  .doctor-banner p {
+    font-size: 1rem !important;
+  }
 }
+
+/* Extra small devices (Android phones like vivo/oppo) */
+@media (max-width: 420px) {
+  .treatment-hero-img {
+    width: 92vw !important;
+    height: 200px !important;
+  }
+
+  .treatment-hero-right h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .animatedCard {
+    padding: 18px 12px !important;
+  }
+}
+
