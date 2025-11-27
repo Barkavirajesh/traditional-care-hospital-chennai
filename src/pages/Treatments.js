@@ -75,7 +75,7 @@ function TreatmentCard({ tr, idx }) {
         maxWidth: "420px",
         minWidth: "270px",
         width: "100%",
-        margin: "0 0",
+        marginBottom: "24px",
         textAlign: "center",
         display: "flex",
         flexDirection: "column",
@@ -146,43 +146,6 @@ function TreatmentCard({ tr, idx }) {
 }
 
 export default function Treatments() {
-  // Arrange cards in rows of two
-  const rows = [];
-  for (let i = 0; i < treatments.length; i += 2) {
-    if (i + 1 === treatments.length) {
-      rows.push(
-        <div
-          key={"row-" + i}
-          className="treatment-row"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "36px",
-            marginBottom: "44px",
-          }}
-        >
-          <TreatmentCard tr={treatments[i]} idx={i} />
-        </div>
-      );
-    } else {
-      rows.push(
-        <div
-          key={"row-" + i}
-          className="treatment-row"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "36px",
-            marginBottom: "44px",
-          }}
-        >
-          <TreatmentCard tr={treatments[i]} idx={i} />
-          <TreatmentCard tr={treatments[i + 1]} idx={i + 1} />
-        </div>
-      );
-    }
-  }
-
   return (
     <div style={{ width: "100vw", overflowX: "hidden", background: "#f3fff8" }}>
       {/* HERO SECTION */}
@@ -213,7 +176,6 @@ export default function Treatments() {
           <img
             src="/image4.jpg"
             alt="Treatments Hero"
-            className="treatment-hero-img"
             style={{
               width: "390px",
               height: "370px",
@@ -223,7 +185,7 @@ export default function Treatments() {
               borderRadius: "24px",
             }}
           />
-          <div className="treatment-hero-right">
+          <div>
             <h2
               style={{
                 fontSize: "2.7rem",
@@ -270,7 +232,6 @@ export default function Treatments() {
 
       {/* STATS ROW */}
       <div
-        className="stats-container"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -322,12 +283,30 @@ export default function Treatments() {
         ))}
       </div>
 
-      {/* CARD ROWS */}
-      <div style={{ maxWidth: "990px", margin: "0 auto", padding: "0 18px" }}>{rows}</div>
-
-      {/* Doctor Banner */}
+      {/* TREATMENT CARDS ROWS (Responsive) */}
       <div
-        className="doctor-banner"
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "36px",
+          maxWidth: "990px",
+          margin: "0 auto",
+          padding: "0 18px",
+        }}
+      >
+        {treatments.map((tr, idx) => (
+          <TreatmentCard
+            key={idx}
+            tr={tr}
+            idx={idx}
+            style={{ flex: "1 1 calc(50% - 18px)" }}
+          />
+        ))}
+      </div>
+
+      {/* DOCTOR BANNER */}
+      <div
         style={{
           marginTop: 60,
           background: "linear-gradient(90deg, #15bd69, #17ddb2)",
@@ -344,7 +323,6 @@ export default function Treatments() {
         <img
           src="/doctor.jpg"
           alt="Dr. D. Rajalakshmi"
-          className="doctor-banner-img"
           style={{
             width: 68,
             height: 68,
