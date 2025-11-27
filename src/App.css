@@ -8,64 +8,63 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 /* Navbar Styles */
-/* Navbar Base */
-/* -------- FORCE NAVBAR STYLE -------- */
 .navbar {
-  width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  padding: 12px 0 !important;
-  background: white !important; /* temporary solid bg for visibility */
-  border-bottom: 2px solid #39b77e !important;
+  width: 100%;
+  background: linear-gradient(90deg, #197046 70%, #39b77e 100%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  min-width: 300px;
 }
-
 .navbar ul {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 20px !important;
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 14px 10px 14px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #197046 #f6f8fa;
 }
-
+.navbar li {
+  display: flex;
+  align-items: center;
+}
 .navbar a, .navbar .cta-btn {
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-  padding: 8px 14px !important;
-  border-radius: 18px !important;
-  white-space: nowrap !important;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.09rem;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 18px;
+  transition: background 0.18s, color 0.18s;
+  white-space: nowrap;
+  min-width: 48px;
 }
-
-/* -------- MOBILE VIEW CLEAR CHANGE -------- */
-@media (max-width: 768px) {
-
-  .navbar {
-    justify-content: flex-start !important; /* must shift left on mobile */
-    padding: 10px 6px !important;
-  }
-
+.navbar a:hover,
+.navbar a.active,
+.navbar .cta-btn:hover {
+  background: #fff6cc;
+  color: #197046 !important;
+}
+@media (max-width: 1100px) {
   .navbar ul {
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    padding: 8px 14px !important;
-    overflow-x: auto !important; /* must scroll */
-    width: 100% !important;
-    background: #f0fff8 !important; /* light tint to notice mobile mode */
+    gap: 8px;
+    padding: 8px 4px 8px 4px;
+    font-size: 0.97rem;
   }
-
   .navbar a, .navbar .cta-btn {
-    font-size: 0.9rem !important; /* must shrink */
-    padding: 6px 10px !important;
-    border-radius: 14px !important;
-  }
-
-  .navbar ul::-webkit-scrollbar {
-    height: 3px !important;
+    font-size: 0.97rem;
+    padding: 5px 7px;
+    min-width: 38px;
   }
 }
-
 /* Full width layout for all sections */
 section, .fullwidth-section {
   width: 100vw;
