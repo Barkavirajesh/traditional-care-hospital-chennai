@@ -167,9 +167,13 @@ export default function Treatments() {
   for (let i = 0; i < treatments.length; i += 2) {
     if (i + 1 === treatments.length) {
       rows.push(
-        <div key={"row-" + i} style={{
-          display: "flex", justifyContent: "center", gap: "36px", marginBottom: "44px"
-        }}>
+        <div key={"row-" + i} className="treatment-row" style={{
+  display: "flex",
+  justifyContent: "center",
+  gap: "36px",
+  marginBottom: "44px"
+}}>
+
           <TreatmentCard tr={treatments[i]} idx={i} />
         </div>
       );
@@ -264,6 +268,22 @@ export default function Treatments() {
           .treatment-hero-img { width: 80vw; height: 240px;}
           .treatment-hero-bg { padding: 32px 0 32px 0; min-height: 270px;}
         }
+          @media (max-width: 600px) {
+  .treatment-row {
+    flex-direction: column !important;
+    gap: 22px !important;
+    align-items: center;
+  }
+}
+  @media (max-width: 600px) {
+  .animatedCard {
+    max-width: 92vw !important;
+    min-width: 92vw !important;
+    padding: 24px 16px !important;
+  }
+}
+
+
       `}</style>
 
       {/* HERO SECTION */}
