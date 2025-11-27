@@ -57,392 +57,96 @@ function Bar({ label, percent, color }) {
 }
 
 export default function AboutUsHeroSection() {
-  const navigate = useNavigate(); // ✅ Hook for navigation
+  const navigate = useNavigate();
 
   const handleBookNow = () => {
-    navigate("/book-appointment"); // ✅ Navigate to Book Appointment page
+    navigate("/book-appointment");
   };
 
   return (
-    <section
-      style={{
-        background: "#fff",
-        fontFamily: "'Inter', Arial, sans-serif",
-        padding: "80px 0 0 0",
-        width: "100vw",
-        boxSizing: "border-box",
-      }}
-    >
+    <section className="about-section">
 
-      {/* Image and Wordings Side by Side */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          alignItems: "center",
-          width: "100vw",
-          gap: "4vw",
-          marginBottom: "32px",
-        }}
-      >
-        {/* LEFT: Image */}
-        <div style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          width: "100%",
-        }}>
+      {/* IMAGE + TEXT */}
+      <div className="about-top">
+        
+        {/* LEFT IMAGE */}
+        <div className="about-left">
           <img
             src={aboutImg}
             alt="Siddha Wellness"
-            style={{
-              width: "520px",
-              height: "340px",
-              maxWidth: "95vw",
-              minWidth: "250px",
-              borderRadius: "30px",
-              objectFit: "cover",
-              boxShadow: "0 18px 56px rgba(21, 174, 112, 0.19)",
-              background: "#fff",
-              transition: "transform 0.4s cubic-bezier(.47,1.64,.41,.8)",
-            }}
-            onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
-            onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+            className="about-img"
           />
         </div>
 
-        {/* RIGHT: Wordings */}
-        <div style={{ width: "100%", paddingRight: "2vw" }}>
-          <h2 style={{
-            fontWeight: 800,
-            fontSize: "2.8rem",
-            color: "#166534",
-            marginBottom: "18px",
-            lineHeight: 1.11,
-          }}>
-            TCH workshops are a place of<br />peace and balance
-          </h2>
-          <p style={{
-            fontSize: "1.19rem",
-            color: "#374151",
-            maxWidth: "720px",
-            marginBottom: "38px",
-            lineHeight: 1.7,
-          }}>
-            Our TCH Workshops are peaceful sanctuaries where you can escape daily stress and rediscover harmony. Rooted in Siddha and Ayurvedic healing, our sessions focus on balance, rejuvenation, and well-being.
+        {/* RIGHT CONTENT */}
+        <div className="about-right">
+          <h2>TCH workshops are a place of<br />peace and balance</h2>
+          <p>
+            Our TCH Workshops are peaceful sanctuaries where you can escape daily stress 
+            and rediscover harmony. Rooted in Siddha and Ayurvedic healing, our sessions 
+            focus on balance, rejuvenation, and well-being.
           </p>
         </div>
       </div>
 
-      {/* --- STATS ROW --- */}
-      <div
-        style={{
-          width: "100vw",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "22px",
-          marginBottom: "43px",
-          flexWrap: "nowrap",
-        }}
-      >
+      {/* STATS */}
+      <div className="stats-row">
         {stats.map(({ label, value }) => (
-          <div
-            key={label}
-            style={{
-              background: "#eaf8f1",
-              border: "2px solid #19995d",
-              borderRadius: "14px",
-              flex: "1 1 240px",
-              minWidth: "240px",
-              maxWidth: "320px",
-              padding: "14px 10px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              boxSizing: "border-box",
-            }}
-          >
-            <span style={{
-              fontWeight: 800,
-              fontSize: "2rem",
-              color: "#15803d",
-              marginBottom: "10px",
-            }}>
-              {value}
-            </span>
-            <span style={{
-              color: "#19995d",
-              fontWeight: 600,
-              fontSize: "1.1rem",
-              textAlign: "center"
-            }}>
-              {label}
-            </span>
+          <div key={label} className="stat-card">
+            <span className="stat-value">{value}</span>
+            <span className="stat-label">{label}</span>
           </div>
         ))}
       </div>
 
-      {/* --- Holistic Ayurveda Services --- */}
-      <div style={{
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: "0 0 60px 0"
-      }}>
-        <div style={{
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}>
-          <h2 style={{
-            textAlign: "center",
-            fontWeight: 900,
-            fontSize: "2.5rem",
-            color: "#15803d",
-            marginBottom: "10px",
-            marginTop: "15px"
-          }}>
-            Our Holistic Sidha Services
-          </h2>
-          <p style={{
-            textAlign: "center",
-            marginBottom: "30px",
-            color: "#166534",
-            fontSize: "1.14rem"
-          }}>
-            At TCH , we offer a wide range of holistic Sidha services. Our services are designed to restore balance & nourish your mind and body.
-          </p>
+      {/* SERVICES */}
+      <div className="services-main">
+        <h2 className="services-heading">Our Holistic Sidha Services</h2>
+        <p className="services-desc">
+          At TCH , we offer a wide range of holistic Sidha services. 
+          Our services are designed to restore balance & nourish your mind and body.
+        </p>
 
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "stretch",
-            width: "100%",
-            maxWidth: "1050px",
-            margin: "0 auto",
-            borderBottom: "2px solid #19995d"
-          }}>
-            {services.map((service, idx) => (
-              <div
-                key={service.title}
-                style={{
-                  flex: "1 1 0",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  padding: "0 18px 22px 18px",
-                  borderRight: idx < services.length - 1 ? "2px solid #19995d" : "none",
-                  textAlign: "center"
-                }}
-              >
-                <div style={{marginBottom: "22px", marginTop: "14px"}}>{service.icon}</div>
-                <div style={{
-                  fontSize: "1.38rem",
-                  fontWeight: 700,
-                  color: "#f97316",
-                  marginBottom: "10px",
-                  marginTop: "7px",
-                  textAlign: "center"
-                }}>{service.title}</div>
-                <button
-                  onClick={handleBookNow}
-                  style={{
-                    marginTop: "20px",
-                    borderRadius: "35px",
-                    border: "2px solid #19995d",
-                    background: "#fff",
-                    boxShadow: "0 2px 7px rgba(21,174,112,0.06)",
-                    color: "#15803d",
-                    padding: "8px 32px",
-                    fontWeight: 600,
-                    fontSize: "1.13rem",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    justifyContent: "center",
-                  }}
-                >
-                  Book Now
-                  <span style={{
-                    display:"inline-block",
-                    width:"18px",
-                    height:"18px",
-                    borderRadius:"50%",
-                    background:"#19995d",
-                    color:"#fff",
-                    lineHeight:"18px",
-                    fontSize:"1.08rem",
-                    marginLeft: "4px"
-                  }}>›</span>
-                </button>
-              </div>
-            ))}
-          </div>
+        <div className="services-container">
+          {services.map((service, idx) => (
+            <div key={service.title} className="service-box">
+              <div>{service.icon}</div>
+              <div className="service-title">{service.title}</div>
+
+              <button onClick={handleBookNow} className="book-btn">
+                Book Now
+                <span className="btn-arrow">›</span>
+              </button>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* --- ABOUT TOUR / PROGRESS BAR SECTION --- */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "2.5fr 1.2fr",
-          alignItems: "center",
-          gap: "32px",
-          padding: "36px 0 0 0",
-          width: "100vw",
-          boxSizing: "border-box",
-        }}
-      >
-        {/* LEFT: Text and Progress */}
-        <div style={{ paddingLeft: "44px", minWidth: 0 }}>
-          <div style={{ color: "#166534", fontWeight: 600, fontSize: "1.12rem", marginBottom: "10px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <span style={{ fontSize: "1.1rem", color: "#fb923c", marginRight: "7px" }}>▍</span>
-            About Tour
-          </div>
-          <h2 style={{ fontWeight: 800, fontSize: "2.5rem", color: "#1a8750", marginBottom: "12px" }}>
-            Step into serenity and harmony
-          </h2>
-          <div style={{ fontSize: "1.03rem", color: "#253135", marginBottom: "24px", maxWidth: "690px", lineHeight: 1.58 }}>
-            These tours provide a chance to learn about the Sidha principles. Experience the stunning revelations of Nadi Pariksha, a traditional diagnostic practice that uses pulse reading to examine your physical, mental, and emotional health.
-          </div>
+      {/* PROGRESS SECTION */}
+      <div className="progress-grid">
+
+        {/* LEFT CONTENT */}
+        <div className="progress-left">
+          <div className="tour-title">About Tour</div>
+          <h2>Step into serenity and harmony</h2>
+          <p>
+            These tours provide a chance to learn about the Sidha principles.
+            Experience the stunning revelations of Nadi Pariksha, a traditional
+            diagnostic practice that uses pulse reading to examine your entire well-being.
+          </p>
 
           <Bar label="Holistic Wellness Techniques" percent={45} color="#fb923c" />
           <Bar label="Sidha Meal Insights" percent={45} color="#fb923c" />
           <Bar label="Traditional Healing Practices" percent={45} color="#fb923c" />
         </div>
 
-        {/* RIGHT: Image */}
-        <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 280 }}>
-          <img
-            src="/image4.jpg"
-            alt="Magic of sidha"
-            style={{
-              width: "99%",
-              height: "325px",
-              objectFit: "cover",
-              borderRadius: "19px",
-              boxShadow: "0 10px 60px rgba(186,119,20, 0.19)",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              left: "40px",
-              bottom: "42px",
-              background: "#fb923c",
-              borderRadius: "9px",
-              color: "#fff",
-              fontWeight: 800,
-              fontSize: "2rem",
-              padding: "20px 55px 17px 45px",
-              boxShadow: "0 3px 18px rgba(251, 146, 60, 0.15)",
-              zIndex: 2,
-              whiteSpace: "nowrap"
-            }}
-          >
-            Magic of sidha
-          </div>
+        {/* RIGHT IMAGE */}
+        <div className="progress-right">
+          <img src="/image4.jpg" alt="Magic of Sidha" className="progress-img" />
+          <div className="sidha-tag">Magic of sidha</div>
         </div>
+
       </div>
     </section>
   );
-  
 }
-
-<style>
-{`
-@media (max-width: 768px) {
-
-  /* --- GLOBAL FIXES --- */
-  section {
-    padding: 40px 0 !important;
-    width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-
-  /* --- IMAGE + TEXT (TOP SECTION) --- */
-  .about-top {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-    gap: 25px !important;
-  }
-
-  .about-top img {
-    width: 90% !important;
-    height: auto !important;
-    margin: auto !important;
-  }
-
-  .about-top h2 {
-    font-size: 1.9rem !important;
-  }
-
-  .about-top p {
-    font-size: 1.05rem !important;
-    padding: 0 20px !important;
-  }
-
-  /* --- STATS ROW --- */
-  .stats-row {
-    flex-wrap: wrap !important;
-    gap: 18px !important;
-    padding: 0 20px !important;
-  }
-
-  .stats-row div {
-    min-width: 45% !important;
-    max-width: 48% !important;
-  }
-
-  /* --- SERVICES SECTION --- */
-  .services-container {
-    flex-direction: column !important;
-    border-bottom: none !important;
-  }
-
-  .services-container > div {
-    width: 90% !important;
-    margin-bottom: 20px !important;
-    border-right: none !important;
-    border-bottom: 2px solid #19995d !important;
-    padding-bottom: 20px !important;
-  }
-
-  .services-container img {
-    width: 70px !important;
-    height: 70px !important;
-  }
-
-  /* --- PROGRESS BAR SECTION --- */
-  .progress-grid {
-    grid-template-columns: 1fr !important;
-    padding: 20px !important;
-  }
-
-  .progress-grid h2 {
-    font-size: 1.9rem !important;
-  }
-
-  .progress-grid p {
-    font-size: 1rem !important;
-  }
-
-  .progress-grid img {
-    width: 90% !important;
-    height: auto !important;
-    margin: auto !important;
-  }
-
-  .progress-grid .sidha-tag {
-    font-size: 1.4rem !important;
-    padding: 10px 20px !important;
-    left: 20px !important;
-    bottom: 20px !important;
-  }
-
-}
-`}
-</style>
