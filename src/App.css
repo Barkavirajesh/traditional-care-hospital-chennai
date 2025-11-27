@@ -800,8 +800,232 @@ section[style] {
 }
 /* 💚 FULL MOBILE RESPONSIVE FIXES 💚 */
 
+/* -------------------- GLOBAL STYLES -------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', sans-serif;
+  background: #f3fff8;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------- HERO SECTION -------------------- */
+.treatment-hero-bg {
+  width: 100vw;
+  background: url('/image9.jpg') no-repeat center center/cover;
+  padding: 65px 0;
+  min-height: 470px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.treatment-hero-content {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+  width: 100vw;
+  padding: 0 5vw;
+}
+
+.treatment-hero-img {
+  width: 390px;
+  height: 370px;
+  object-fit: cover;
+  box-shadow: 0 6px 38px rgba(41,108,45,0.24);
+  background: #fff;
+  border-radius: 24px;
+}
+
+.treatment-hero-right h2 {
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #15804b;
+  margin-bottom: 16px;
+  line-height: 1.11;
+  letter-spacing: .04em;
+}
+
+.treatment-hero-right p {
+  font-size: 1.25rem;
+  color: #245f42;
+  line-height: 1.58;
+  margin-bottom: 22px;
+}
+
+.treatment-hero-right ul {
+  color: #1a783c;
+  font-weight: 600;
+  font-size: 1.09rem;
+  line-height: 1.7;
+  margin: 0;
+  list-style-type: disc;
+  padding-left: 22px;
+}
+
+/* -------------------- STATS SECTION -------------------- */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 44px auto;
+}
+
+.stats-container div {
+  background: #eaf8f1;
+  border: 2px solid #19b17b;
+  border-radius: 13px;
+  flex: 1 1 160px;
+  min-width: 100px;
+  max-width: 220px;
+  padding: 16px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.stats-container span:first-child {
+  font-weight: 800;
+  font-size: 1.7rem;
+  color: #15a463;
+  margin-bottom: 5px;
+}
+
+.stats-container span:last-child {
+  color: #19b17b;
+  font-weight: 600;
+  font-size: 1.07rem;
+  text-align: center;
+}
+
+/* -------------------- TREATMENT CARDS -------------------- */
+.treatment-row {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-bottom: 44px;
+}
+
+.animatedCard {
+  background: rgba(255,255,255,0.86);
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(30,150,100,0.12), 0 0 0 1px rgba(25,140,90,0.05);
+  padding: 32px 26px 22px;
+  transition: box-shadow 0.18s, transform 0.18s;
+  backdrop-filter: blur(6px);
+  border-left: 6px solid #16a34a;
+  max-width: 420px;
+  min-width: 270px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.animatedCard:hover {
+  transform: scale(1.035);
+  box-shadow: 0 20px 42px #19cc8380;
+}
+
+.animatedCard div:first-child {
+  font-size: 2.3rem;
+  margin-bottom: 8px;
+}
+
+.animatedCard ul {
+  color: #176b4a;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 24px;
+  list-style-position: inside;
+  max-width: 340px;
+  width: 100%;
+  display: inline-block;
+}
+
+/* -------------------- DOCTOR BANNER -------------------- */
+.doctor-banner {
+  margin-top: 60px;
+  background: linear-gradient(90deg, #15bd69, #17ddb2);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 16px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+.doctor-banner-img {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #e4fff4;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 16px #1e836618;
+}
+
+.doctor-banner h3 {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 7px;
+}
+
+.doctor-banner p {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+}
+
+.doctor-banner button {
+  background: #fff;
+  color: #14804b;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 8px;
+}
+
+.doctor-banner button:hover {
+  background: #e4fff4;
+}
+
+/* -------------------- MOBILE RESPONSIVENESS -------------------- */
+@media (max-width: 980px) {
+  .treatment-hero-content {
+    grid-template-columns: 1fr;
+    gap: 5vw;
+    padding: 0 3vw;
+  }
+  .treatment-hero-img {
+    width: 80vw;
+    height: 240px;
+  }
+  .treatment-hero-bg {
+    padding: 32px 0;
+    min-height: 270px;
+  }
+}
+
 @media (max-width: 768px) {
-  /* Hero Section Text */
   .treatment-hero-right h2 {
     font-size: 1.9rem !important;
     text-align: center !important;
@@ -818,7 +1042,6 @@ section[style] {
     padding-left: 18px !important;
   }
 
-  /* Stats Section */
   .stats-container {
     flex-direction: column !important;
     gap: 16px !important;
@@ -830,7 +1053,6 @@ section[style] {
     margin: 0 auto !important;
   }
 
-  /* Cards Layout (global fix) */
   .treatment-row {
     flex-direction: column !important;
     gap: 24px !important;
@@ -842,7 +1064,6 @@ section[style] {
     min-width: 90vw !important;
   }
 
-  /* Doctor Banner */
   .doctor-banner {
     margin: 45px 12px !important;
     padding: 24px !important;
@@ -857,7 +1078,13 @@ section[style] {
   }
 }
 
-/* Extra small devices (Android phones like vivo/oppo) */
+@media (max-width: 600px) {
+  .doctor-banner {
+    max-width: 95vw !important;
+    padding: 20px 16px !important;
+  }
+}
+
 @media (max-width: 420px) {
   .treatment-hero-img {
     width: 92vw !important;
@@ -872,8 +1099,26 @@ section[style] {
     padding: 18px 12px !important;
   }
 }
-@media (max-width: 420px) {
-  .treatment-hero-img {
-    width: 92vw;
+
+@media (max-width: 360px) {
+  .treatment-hero-right h2 {
+    font-size: 1.45rem !important;
+  }
+
+  .treatment-hero-right p,
+  .treatment-hero-right ul {
+    font-size: 0.9rem !important;
+  }
+
+  .animatedCard {
+    padding: 16px 10px !important;
+  }
+
+  .doctor-banner h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .doctor-banner p {
+    font-size: 0.88rem !important;
   }
 }
