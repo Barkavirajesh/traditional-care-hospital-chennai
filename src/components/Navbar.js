@@ -14,19 +14,22 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          minHeight: 80,
-          padding: "0 20px",
-          background: "transparent",
-          boxShadow: "0 2px 16px #0e8642ff",
-          position: "relative",
-          zIndex: 10
-        }}
-      >
+     <nav
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    minHeight: 80,
+    padding: "0 20px",
+    background: "#1c954d",       // ✅ restored green background
+    borderRadius: "0 0 14px 0",   // ✅ restored your curved edge
+    boxShadow: "0 2px 16px #c5ecd6",
+    position: "relative",
+    zIndex: 10
+  }}
+>
+
+      
         {/* LOGO */}
         <Link to="/" style={{ display: "flex", alignItems: "center" }}>
           <img
