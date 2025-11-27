@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const navStyle = {
@@ -10,6 +10,8 @@ const navStyle = {
 };
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <>
       <nav
@@ -20,7 +22,8 @@ export default function Navbar() {
           boxShadow: "0 2px 16px #c5ecd6",
           background: "transparent",
           padding: 0,
-          position: "relative"
+          position: "relative",
+          zIndex: 10
         }}
       >
         {/* LOGO */}
@@ -53,8 +56,52 @@ export default function Navbar() {
           </Link>
         </div>
 
+        {/* HAMBURGER BUTTON FOR MOBILE */}
+        <div
+          className="hamburger-btn"
+          style={{
+            display: "none",
+            flexDirection: "column",
+            cursor: "pointer",
+            padding: "10px 20px",
+            zIndex: 20
+          }}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span
+            style={{
+              height: 3,
+              width: 25,
+              background: "#fff",
+              marginBottom: 5,
+              borderRadius: 2,
+              transition: "0.3s"
+            }}
+          />
+          <span
+            style={{
+              height: 3,
+              width: 25,
+              background: "#fff",
+              marginBottom: 5,
+              borderRadius: 2,
+              transition: "0.3s"
+            }}
+          />
+          <span
+            style={{
+              height: 3,
+              width: 25,
+              background: "#fff",
+              borderRadius: 2,
+              transition: "0.3s"
+            }}
+          />
+        </div>
+
         {/* NAV LINKS */}
         <div
+          className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}
           style={{
             display: "flex",
             alignItems: "center",
@@ -64,7 +111,9 @@ export default function Navbar() {
             borderRadius: "0 0 14px 0",
             width: "100%",
             flex: 1,
-            justifyContent: "flex-end"
+            justifyContent: "flex-end",
+            transition: "max-height 0.3s ease",
+            overflow: "hidden"
           }}
         >
           <ul
@@ -108,36 +157,49 @@ export default function Navbar() {
       {/* RESPONSIVE MOBILE STYLES */}
       <style>
         {`
-        @media (max-width: 768px) {
-          nav {
-            flex-direction: column !important;
-            min-height: auto !important;
-          }
+          @media (max-width: 768px) {
+            /* Show hamburger button */
+            .hamburger-btn {
+              display: flex !important;
+              margin-left: auto;
+              margin-right: 20px;
+            }
 
-          nav > div:nth-child(2) {
-            width: 100% !important;
-            justify-content: center !important;
-          }
+            nav > div:nth-child(2) {
+              order: 2;
+            }
 
-          nav ul {
-            flex-direction: column !important;
-            width: 100% !important;
-            padding: 12px 0 !important;
-            gap: 12px !important;
-            justify-content: center !important;
-          }
+            .nav-links {
+              max-height: 0;
+              flex-direction: column;
+              width: 100%;
+              justify-content: center;
+              border-radius: 0 0 14px 0;
+            }
 
-          nav ul li {
-            width: 100%;
-            text-align: center;
-          }
+            .nav-links.open {
+              max-height: 500px; /* enough to show all items */
+            }
 
-          .cta-btn {
-            width: 90% !important;
-            display: inline-block;
+            nav ul {
+              flex-direction: column !important;
+              width: 100% !important;
+              padding: 12px 0 !important;
+              gap: 12px !important;
+              justify-content: center !important;
+            }
+
+            nav ul li {
+              width: 100%;
+              text-align: center;
+            }
+
+            .cta-btn {
+              width: 90% !important;
+              display: inline-block;
+            }
           }
-        }
-      `}
+        `}
       </style>
     </>
   );
