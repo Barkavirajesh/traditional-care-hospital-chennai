@@ -435,6 +435,88 @@ export default function HomePage() {
           .why-ayur-left h1 { font-size: 2rem;}
           .why-ayur-left h2 { font-size: 1.2rem;}
         }
+          /* ====================== MOBILE RESPONSIVE FIX (Below 768px) ====================== */
+@media (max-width: 768px) {
+  
+  /* HERO SECTION */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .consult-btn {
+    font-size: 1rem;
+    padding: 0.7em 1.8em;
+  }
+
+  /* ACHIEVEMENT SECTION */
+  .achievement-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+  .achievement-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .achievement-card {
+    width: 75%;
+    margin: auto;
+  }
+
+  /* FEATURE SECTION */
+  .feature-section {
+    flex-direction: column;
+    margin: 30px 4vw;
+  }
+  .feature-left img {
+    max-height: 260px;
+    object-fit: cover;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* DOCTOR SECTION */
+  .doctor-frame-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .doctor-frame-right {
+    padding-left: 0;
+    text-align: center;
+  }
+  .doctor-frame-left img {
+    max-height: 300px;
+  }
+  .doctor-frame-right h2 {
+    font-size: 1.7rem;
+  }
+
+  /* WHY CHOOSE TCH */
+  .why-ayur-section {
+    flex-direction: column;
+    margin: 30px 4vw;
+  }
+  .why-ayur-left h1 {
+    font-size: 2rem;
+  }
+  .why-ayur-left h2 {
+    font-size: 1.4rem;
+  }
+  .why-ayur-desc {
+    font-size: 1rem;
+  }
+  .why-ayur-feature b {
+    font-size: 1.2rem;
+  }
+  .why-ayur-right img {
+    max-height: 260px;
+    border-radius: 12px;
+  }
+}
+
       `}</style>
 
       {/* HERO SECTION */}
