@@ -1,18 +1,15 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const navStyle = {
   color: "#fff",
   fontSize: "1.08rem",
   fontWeight: 500,
   textDecoration: "none",
-  padding: "8px 14px",
-  whiteSpace: "nowrap"
+  padding: "8px 14px"
 };
 
 export default function Navbar() {
-  const location = useLocation();
-
   return (
     <nav
       style={{
@@ -20,16 +17,12 @@ export default function Navbar() {
         alignItems: "center",
         minHeight: 80,
         boxShadow: "0 2px 16px #c5ecd6",
-        background: "transparent",
+        background: "transparent", // No green!
         padding: 0,
-        position: "sticky",
-        top: 0,
-        zIndex: 999,
-        width: "100vw",
-        overflowX: "hidden"
+        position: "relative"
       }}
     >
-      {/* LOGO */}
+      {/* LOGO - fully outside green bar */}
       <div
         style={{
           display: "flex",
@@ -43,7 +36,7 @@ export default function Navbar() {
             src="/tch-image.jpg"
             alt="Traditional Care Hospital Logo"
             style={{
-              width: 150,
+              width: 150,        // Horizontal size as needed
               height: "auto",
               borderRadius: 12,
               background: "#fff",
@@ -55,14 +48,14 @@ export default function Navbar() {
           />
         </Link>
       </div>
-
-      {/* NAV LINKS BAR */}
+      {/* NAV LINKS: green bar starts exactly from 'Home' */}
       <div
         style={{
           display: "flex",
           alignItems: "center",
           background: "#1c954d",
           minHeight: 80,
+          padding: "0 0 0 0",  // no left padding; starts at "Home"
           borderRadius: "0 0 14px 0",
           width: "100%",
           flex: 1,
@@ -70,43 +63,23 @@ export default function Navbar() {
         }}
       >
         <ul
-          className="nav-links"
           style={{
             listStyle: "none",
             display: "flex",
             alignItems: "center",
-          gap: 18,
+            gap: 18,
             margin: 0,
-            paddingRight: 32,
+            padding: "0 32px 0 0", // right padding only
             justifyContent: "flex-end",
-            flex: 1,
-            overflowX: "auto"
+            flex: 1
           }}
         >
-          <li>
-            <Link
-              to="/"
-              style={navStyle}
-              className={location.pathname === "/" ? "active-nav" : ""}
-            >
-              Home
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/about"
-              style={navStyle}
-              className={location.pathname === "/about" ? "active-nav" : ""}
-            >
-              About Us
-            </Link>
-          </li>
-
+          <li><Link to="/" style={navStyle}>Home</Link></li>
+          <li><Link to="/about" style={navStyle}>About Us</Link></li>
+          
           <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
           <li><Link to="/services" style={navStyle}>Services</Link></li>
           <li><Link to="/contact" style={navStyle}>Contact Us</Link></li>
-
           <li>
             <Link
               to="/appointment"
@@ -118,9 +91,7 @@ export default function Navbar() {
                 borderRadius: 8,
                 fontWeight: 700,
                 marginLeft: 6,
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-                fontSize: "0.95rem"
+                textDecoration: "none"
               }}
             >
               Book an Appointment
@@ -128,19 +99,6 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-
-      {/* OPTIONAL: ACTIVE NAV STYLE */}
-      <style>
-        {`
-        .active-nav {
-          background: #fff6cc !important;
-          color: #197046 !important;
-          border-radius: 20px;
-          padding: 6px 12px;
-        }
-        `}
-      </style>
-
     </nav>
   );
 }
