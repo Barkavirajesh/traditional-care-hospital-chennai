@@ -44,16 +44,7 @@ export default function Navbar() {
             <img
               src="/tch-image.jpg"
               alt="Traditional Care Hospital Logo"
-              style={{
-                width: 150,
-                height: "auto",
-                borderRadius: 12,
-                background: "#fff",
-                objectFit: "contain",
-                boxShadow: "0 0 8px rgba(0,0,0,0.15)",
-                padding: "2px",
-                margin: "8px"
-              }}
+              className="navbar-logo"
             />
           </Link>
         </div>
@@ -162,11 +153,11 @@ export default function Navbar() {
               zIndex: 25
             }}
           >
-            <li><Link to="/" style={navStyle}>Home</Link></li>
-            <li><Link to="/about" style={navStyle}>About Us</Link></li>
-            <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
-            <li><Link to="/services" style={navStyle}>Services</Link></li>
-            <li><Link to="/contact" style={navStyle}>Contact Us</Link></li>
+            <li><Link to="/" style={navStyle} onClick={() => setIsOpen(false)}>Home</Link></li>
+            <li><Link to="/about" style={navStyle} onClick={() => setIsOpen(false)}>About Us</Link></li>
+            <li><Link to="/treatments" style={navStyle} onClick={() => setIsOpen(false)}>Treatments</Link></li>
+            <li><Link to="/services" style={navStyle} onClick={() => setIsOpen(false)}>Services</Link></li>
+            <li><Link to="/contact" style={navStyle} onClick={() => setIsOpen(false)}>Contact Us</Link></li>
             <li>
               <Link
                 to="/appointment"
@@ -178,6 +169,7 @@ export default function Navbar() {
                   fontWeight: 700,
                   textDecoration: "none"
                 }}
+                onClick={() => setIsOpen(false)}
               >
                 Book an Appointment
               </Link>
@@ -186,9 +178,22 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* RESPONSIVE CSS */}
+      {/* RESPONSIVE + LOGO CSS */}
       <style>
         {`
+        /* LOGO DEFAULT */
+        .navbar-logo {
+          width: 150px;
+          height: auto;
+          object-fit: contain;
+          background: #fff;
+          padding: 4px;
+          margin: 8px;
+          border-radius: 10px;
+          box-shadow: 0 0 8px rgba(0,0,0,0.12);
+        }
+
+        /* MOBILE MENU VISIBILITY */
         @media (max-width: 768px) {
           .desktop-menu {
             display: none !important;
@@ -196,6 +201,28 @@ export default function Navbar() {
 
           .hamburger {
             display: flex !important;
+          }
+
+          nav {
+            min-height: 64px !important;
+          }
+
+          .navbar-logo {
+            width: 110px;
+            padding: 3px;
+            margin: 6px;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.12);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .navbar-logo {
+            width: 96px;
+            padding: 2px;
+            margin: 4px;
+            border-radius: 5px;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
           }
         }
       `}
