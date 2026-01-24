@@ -612,7 +612,7 @@ export default function HomePage() {
         </div>
         <div className="doctor-frame-right">
           <h2>Meet Our Chief Practitioner</h2>
-          <h4>Dr. D. Rajalakshmi – Holistic Health Expert</h4>
+          <h4>Dr. D. Rajalakshmi – Holistic Health Consultant</h4>
           <p>
             With two decades of experience in the field of holistic and integrative medicine, Dr. D. Rajalakshmi leads our Sidha wellness practice with compassion and expertise. She believes in combining deep traditional knowledge with the latest advancements, offering truly personalized, compassionate care for every patient.<br /><br />
             Whether you seek preventive health, safe chronic disease management, or natural rejuvenation, Dr. D. Rajalakshmi and her team are committed to guiding you towards balance, vitality, and lasting wellness.
