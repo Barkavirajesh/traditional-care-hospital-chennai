@@ -14,31 +14,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          minHeight: 80,
-          boxShadow: "0 2px 16px #c5ecd6",
-          background: "transparent",
-          padding: "0 10px",
-          position: "relative",
-          zIndex: 10
-        }}
-      >
+      <nav className="navbar-root">
         {/* LOGO */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            zIndex: 20
-          }}
-        >
-          <Link
-            to="/"
-            style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
-          >
+        <div className="logo-container">
+          <Link to="/" className="logo-link">
             <img
               src="/tch-image.jpg"
               alt="Traditional Care Hospital Logo"
@@ -47,31 +26,9 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* GREEN NAVBAR RIGHT SECTION */}
-        <div
-          className="desktop-menu"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            background: "#1c954d",
-            minHeight: 80,
-            padding: "0",
-            borderRadius: "0 0 14px 0",
-            flex: 1,
-            justifyContent: "flex-end"
-          }}
-        >
-          <ul
-            style={{
-              listStyle: "none",
-              display: "flex",
-              alignItems: "center",
-              gap: 24,
-              margin: 0,
-              padding: "0 32px 0 0",
-              justifyContent: "flex-end"
-            }}
-          >
+        {/* DESKTOP MENU */}
+        <div className="desktop-menu">
+          <ul className="desktop-ul">
             <li><Link to="/" style={navStyle}>Home</Link></li>
             <li><Link to="/about" style={navStyle}>About Us</Link></li>
             <li><Link to="/treatments" style={navStyle}>Treatments</Link></li>
@@ -96,58 +53,15 @@ export default function Navbar() {
         </div>
 
         {/* MOBILE HAMBURGER */}
-        <div
-          className="hamburger"
-          style={{
-            display: "none",
-            flexDirection: "column",
-            cursor: "pointer",
-            padding: "10px 16px",
-            position: "absolute",
-            right: 10,
-            top: 20,
-            zIndex: 30
-          }}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span style={{
-            height: 3,
-            width: 26,
-            background: "#106336",
-            marginBottom: 5
-          }} />
-          <span style={{
-            height: 3,
-            width: 26,
-            background: "#106336",
-            marginBottom: 5
-          }} />
-          <span style={{
-            height: 3,
-            width: 26,
-            background: "#106336"
-          }} />
+        <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+          <span />
+          <span />
+          <span />
         </div>
 
         {/* MOBILE MENU */}
         {isOpen && (
-          <ul
-            style={{
-              position: "absolute",
-              top: 64,
-              right: 0,
-              width: "100%",
-              background: "#1c954d",
-              listStyle: "none",
-              padding: "20px 0",
-              margin: 0,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 18,
-              zIndex: 25
-            }}
-          >
+          <ul className="mobile-menu">
             <li><Link to="/" style={navStyle} onClick={() => setIsOpen(false)}>Home</Link></li>
             <li><Link to="/about" style={navStyle} onClick={() => setIsOpen(false)}>About Us</Link></li>
             <li><Link to="/treatments" style={navStyle} onClick={() => setIsOpen(false)}>Treatments</Link></li>
@@ -173,21 +87,92 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* RESPONSIVE + LOGO CSS */}
+      {/* CSS */}
       <style>
         {`
-        /* LOGO DEFAULT (DESKTOP) */
-        .navbar-logo {
-          height: 56px;
-          width: auto;
-          object-fit: contain;
-          background: #fff;
-          padding: 6px 10px;
-          border-radius: 10px;
-          box-shadow: 0 0 8px rgba(0,0,0,0.12);
+        .navbar-root {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          min-height: 80px;
+          box-shadow: 0 2px 16px #c5ecd6;
+          background: white;
+          padding: 0 12px;
+          position: relative;
+          z-index: 10;
         }
 
-        /* MOBILE VIEW */
+        .logo-container {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+
+        .logo-link {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+
+        .navbar-logo {
+          height: 64px;
+          width: auto;
+          object-fit: contain;
+        }
+
+        .desktop-menu {
+          display: flex;
+          align-items: center;
+          background: #1c954d;
+          min-height: 80px;
+          border-radius: 0 0 14px 0;
+          flex: 1;
+          justify-content: flex-end;
+        }
+
+        .desktop-ul {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          margin: 0;
+          padding: 0 32px 0 0;
+        }
+
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          padding: 10px;
+          position: absolute;
+          right: 12px;
+          top: 22px;
+        }
+
+        .hamburger span {
+          height: 3px;
+          width: 28px;
+          background: #106336;
+          margin-bottom: 6px;
+        }
+
+        .mobile-menu {
+          position: absolute;
+          top: 64px;
+          right: 0;
+          width: 100%;
+          background: #1c954d;
+          list-style: none;
+          padding: 20px 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 18px;
+          z-index: 25;
+        }
+
+        /* MOBILE FIX */
         @media (max-width: 768px) {
           .desktop-menu {
             display: none !important;
@@ -197,26 +182,23 @@ export default function Navbar() {
             display: flex !important;
           }
 
-          nav {
-            min-height: 64px !important;
+          .navbar-root {
+            min-height: 64px;
+            padding: 0 10px;
+          }
+
+          .logo-container {
+            height: 64px;
           }
 
           .navbar-logo {
-            height: 42px;
-            padding: 4px 6px;
-            border-radius: 6px;
-            box-shadow: 0 0 4px rgba(0,0,0,0.1);
-            background: transparent; /* removes ugly white box */
+            height: 52px;  /* 👈 fills white bar nicely */
           }
         }
 
-        /* SMALL MOBILE */
         @media (max-width: 480px) {
           .navbar-logo {
-            height: 36px;
-            padding: 2px 4px;
-            border-radius: 4px;
-            box-shadow: none;
+            height: 56px;  /* slightly bigger for very small phones */
           }
         }
       `}
