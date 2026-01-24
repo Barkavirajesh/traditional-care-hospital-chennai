@@ -18,11 +18,11 @@ export default function Navbar() {
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-start",
+          justifyContent: "space-between",
           minHeight: 80,
           boxShadow: "0 2px 16px #c5ecd6",
           background: "transparent",
-          padding: 0,
+          padding: "0 10px",
           position: "relative",
           zIndex: 10
         }}
@@ -32,8 +32,6 @@ export default function Navbar() {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start",
-            paddingLeft: 20,
             zIndex: 20
           }}
         >
@@ -104,33 +102,30 @@ export default function Navbar() {
             display: "none",
             flexDirection: "column",
             cursor: "pointer",
-            padding: "10px 20px",
+            padding: "10px 16px",
             position: "absolute",
             right: 10,
-            top: 22,
+            top: 20,
             zIndex: 30
           }}
           onClick={() => setIsOpen(!isOpen)}
         >
           <span style={{
             height: 3,
-            width: 28,
+            width: 26,
             background: "#106336",
-            marginBottom: 6,
-            transition: "0.3s"
+            marginBottom: 5
           }} />
           <span style={{
             height: 3,
-            width: 28,
+            width: 26,
             background: "#106336",
-            marginBottom: 6,
-            transition: "0.3s"
+            marginBottom: 5
           }} />
           <span style={{
             height: 3,
-            width: 28,
-            background: "#106336",
-            transition: "0.3s"
+            width: 26,
+            background: "#106336"
           }} />
         </div>
 
@@ -139,7 +134,7 @@ export default function Navbar() {
           <ul
             style={{
               position: "absolute",
-              top: 80,
+              top: 64,
               right: 0,
               width: "100%",
               background: "#1c954d",
@@ -181,19 +176,18 @@ export default function Navbar() {
       {/* RESPONSIVE + LOGO CSS */}
       <style>
         {`
-        /* LOGO DEFAULT */
+        /* LOGO DEFAULT (DESKTOP) */
         .navbar-logo {
-          width: 150px;
-          height: auto;
+          height: 56px;
+          width: auto;
           object-fit: contain;
           background: #fff;
-          padding: 4px;
-          margin: 8px;
+          padding: 6px 10px;
           border-radius: 10px;
           box-shadow: 0 0 8px rgba(0,0,0,0.12);
         }
 
-        /* MOBILE MENU VISIBILITY */
+        /* MOBILE VIEW */
         @media (max-width: 768px) {
           .desktop-menu {
             display: none !important;
@@ -208,21 +202,21 @@ export default function Navbar() {
           }
 
           .navbar-logo {
-            width: 110px;
-            padding: 3px;
-            margin: 6px;
+            height: 42px;
+            padding: 4px 6px;
             border-radius: 6px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.12);
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+            background: transparent; /* removes ugly white box */
           }
         }
 
+        /* SMALL MOBILE */
         @media (max-width: 480px) {
           .navbar-logo {
-            width: 96px;
-            padding: 2px;
-            margin: 4px;
-            border-radius: 5px;
-            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+            height: 36px;
+            padding: 2px 4px;
+            border-radius: 4px;
+            box-shadow: none;
           }
         }
       `}
