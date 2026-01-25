@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar-root">
-        {/* LOGO */}
+        {/* LOGO + TAGLINE */}
         <div className="logo-container">
           <Link to="/" className="logo-link">
             <img
@@ -24,6 +24,11 @@ export default function Navbar() {
               className="navbar-logo"
             />
           </Link>
+
+          {/* Mobile-only tagline */}
+          <div className="mobile-tagline">
+            Natural Healing • Sidha Care
+          </div>
         </div>
 
         {/* DESKTOP MENU */}
@@ -104,20 +109,29 @@ export default function Navbar() {
 
         .logo-container {
           display: flex;
-          align-items: center;
+          flex-direction: column;
+          justify-content: center;
           height: 100%;
         }
 
         .logo-link {
           display: flex;
           align-items: center;
-          height: 100%;
         }
 
         .navbar-logo {
           height: 64px;
           width: auto;
           object-fit: contain;
+        }
+
+        .mobile-tagline {
+          display: none;
+          font-size: 0.85rem;
+          color: #2f6b3c;
+          margin-top: 2px;
+          line-height: 1.2;
+          font-weight: 500;
         }
 
         .desktop-menu {
@@ -158,7 +172,7 @@ export default function Navbar() {
 
         .mobile-menu {
           position: absolute;
-          top: 64px;
+          top: 72px;
           right: 0;
           width: 100%;
           background: #1c954d;
@@ -183,22 +197,30 @@ export default function Navbar() {
           }
 
           .navbar-root {
-            min-height: 64px;
+            min-height: 72px;
             padding: 0 10px;
           }
 
           .logo-container {
-            height: 64px;
+            height: auto;
           }
 
           .navbar-logo {
-            height: 52px;  /* 👈 fills white bar nicely */
+            height: 60px;  /* 👈 bigger logo */
+          }
+
+          .mobile-tagline {
+            display: block; /* 👈 show wording only on mobile */
           }
         }
 
         @media (max-width: 480px) {
           .navbar-logo {
-            height: 56px;  /* slightly bigger for very small phones */
+            height: 64px;  /* slightly bigger for very small phones */
+          }
+
+          .mobile-tagline {
+            font-size: 0.8rem;
           }
         }
       `}
