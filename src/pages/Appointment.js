@@ -1,4 +1,3 @@
-import { number } from "framer-motion";
 import React, { useState } from "react";
 
 export default function Appointment() {
@@ -36,7 +35,6 @@ export default function Appointment() {
       amount: "500"
     };
 
-    // Show info based on consult type
     if (form.consultType === "Online") {
       setConsultationInfo(
         "📩 Video link will be sent to your email after the doctor confirms your appointment. Access will only be available after payment."
@@ -48,13 +46,14 @@ export default function Appointment() {
     }
 
     try {
-     const res = await fetch("https://tch-backend-1.onrender.com/book-appointment", {
-
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload)
-});
-
+      const res = await fetch(
+        "https://tch-backend-1.onrender.com/book-appointment",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }
+      );
 
       const data = await res.json();
 
@@ -64,11 +63,9 @@ export default function Appointment() {
         );
 
         if (data.appointmentId) {
-          // Store appointmentId for later payment or consultation check
           localStorage.setItem("lastAppointmentId", data.appointmentId);
         }
 
-        // Reset form
         setForm({
           name: "",
           number: "",
@@ -87,11 +84,13 @@ export default function Appointment() {
     } catch (err) {
       setMessage("❌ Server error. Please try again later.");
     }
+
     setLoading(false);
   };
 
   return (
     <section
+      className="appointment-section"
       style={{
         background: "#eaf8ec",
         borderRadius: 16,
@@ -101,7 +100,7 @@ export default function Appointment() {
       {/* ----------------- Step Cards ----------------- */}
       <div className="booking-steps-flip">
         <div className="corner-hero">
-          <h2>
+          <h2 style={{ textAlign: "center" }}>
             <span className="hero-main">Building great future Together,</span>
             <br />
             <span className="hero-sub">Be with us</span>
@@ -140,6 +139,7 @@ export default function Appointment() {
                     </div>
                   </div>
                 </div>
+
                 {index < 2 && (
                   <div className="step-arrow">
                     <svg width="56" height="44" viewBox="0 0 56 44" fill="none">
@@ -160,7 +160,8 @@ export default function Appointment() {
         </div>
       </div>
 
-      <h2>Book Appointment</h2>
+      <h2 style={{ textAlign: "center" }}>Book Appointment</h2>
+
       <form className="appointment-form" onSubmit={handleSubmit}>
         <div className="form-group-row">
           <div className="form-group">
@@ -175,12 +176,14 @@ export default function Appointment() {
               onChange={(e) => setForm({ ...form, name: e.target.value })}
             />
           </div>
+
           <div className="form-group">
             <label>
               Phone Number <span className="required">*</span>
             </label>
             <input
               type="text"
+              inputMode="numeric"
               placeholder="Phone Number"
               required
               value={form.number}
@@ -202,12 +205,14 @@ export default function Appointment() {
               onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
           </div>
+
           <div className="form-group">
             <label>
               Patient Age <span className="required">*</span>
             </label>
             <input
               type="number"
+              inputMode="numeric"
               placeholder="Age"
               required
               value={form.age}
@@ -229,7 +234,9 @@ export default function Appointment() {
                     name="gender"
                     value={g}
                     checked={form.gender === g}
-                    onChange={(e) => setForm({ ...form, gender: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, gender: e.target.value })
+                    }
                   />{" "}
                   {g}
                 </label>
@@ -274,6 +281,7 @@ export default function Appointment() {
               onChange={(e) => setForm({ ...form, date: e.target.value })}
             />
           </div>
+
           <div className="form-group">
             <label>
               Preferred Timeslot <span className="required">*</span>
@@ -323,7 +331,12 @@ export default function Appointment() {
         </div>
 
         <div style={{ textAlign: "right", marginTop: 16 }}>
-          <button type="submit" className="book-btn" disabled={loading}>
+          <button
+            type="submit"
+            className="book-btn"
+            disabled={loading}
+            style={{ width: "100%", maxWidth: 280 }}
+          >
             {loading ? "Booking..." : "Book Consultation"}
           </button>
         </div>
@@ -333,6 +346,7 @@ export default function Appointment() {
             {consultationInfo}
           </div>
         )}
+
         {message && (
           <div
             className={`fade-in-alert ${
