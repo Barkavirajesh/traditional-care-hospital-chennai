@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 
 const slides = [
   {
-    heading: "Restore Balance, Embrace Wellness with Sidha Care",
+    heading: "Restore Balance, Embrace Wellness with Siddha Care",
     desc: "We guide you toward holistic health by restoring balance in mind, body, and spirit with personalized sidha care. Embrace natural wellness today!",
     img: "/image5.jpg"
   },
   {
-    heading: "Experience Holistic Healing with Sidha",
-    desc: "Discover the power of Sidha medicine for natural recovery, energy, and well-being, using time-tested formulas and holistic wisdom. Bring harmony to your body, mind, and spirit—Start your Sidha wellness journey today!",
+    heading: "Experience Holistic Healing with Siddha",
+    desc: "Discover the power of Siddha medicine for natural recovery, energy, and well-being, using time-tested formulas and holistic wisdom. Bring harmony to your body, mind, and spirit—Start your Siddha wellness journey today!",
     img: "/image6.jpg"
   }
 ];
@@ -611,8 +611,8 @@ export default function HomePage() {
           <img src="/doctor.jpg" alt="Dr. D. Rajalakshmi" />
         </div>
         <div className="doctor-frame-right">
-          <h2>Meet Our Chief Practitioner</h2>
-          <h4>Dr. D. Rajalakshmi – Medical Officer</h4>
+          <h2>Meet Our Medical Officer</h2>
+          <h4>Dr. D. Rajalakshmi,B.S.M.S.,(Gov.Reg.3009) </h4>
           <p>
             With two decades of experience in the field of holistic and integrative medicine, Dr. D. Rajalakshmi leads our Sidha wellness practice with compassion and expertise. She believes in combining deep traditional knowledge with the latest advancements, offering truly personalized, compassionate care for every patient.<br /><br />
             Whether you seek preventive health, safe chronic disease management, or natural rejuvenation, Dr. D. Rajalakshmi and her team are committed to guiding you towards balance, vitality, and lasting wellness.
