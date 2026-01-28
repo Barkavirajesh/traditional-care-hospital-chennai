@@ -101,7 +101,7 @@ export default function AboutUsHeroSection() {
 
       {/* SERVICES */}
       <div className="services-main">
-        <h2 className="services-heading">Our Holistic Sidha Services</h2>
+        <h2 className="services-heading">Our Holistic Siddha Services</h2>
         <p className="services-desc">
           At TCH , we offer a wide range of holistic Siddha services. 
           Our services are designed to restore balance & nourish your mind and body.
