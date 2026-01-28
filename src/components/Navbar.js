@@ -27,7 +27,7 @@ export default function Navbar() {
 
           {/* Mobile-only tagline */}
           <div className="mobile-tagline">
-            Natural Healing • Sidha Care
+            Natural Healing • Siddha Care
           </div>
         </div>
 
