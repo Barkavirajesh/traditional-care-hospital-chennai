@@ -219,7 +219,7 @@ export default function ContactUs() {
               </span>
               <br />
               <span style={{ color: "#233d30" }}>
-                Mon – Sat: 9:00 AM – 8:00 PM <br />
+                Mon – Sat: 10:00 AM – 4:00 PM <br />
                 <span style={{ color: "#b40000", fontWeight: "bold" }}>
                   Sunday: Closed
                 </span>
@@ -374,7 +374,7 @@ export default function ContactUs() {
                   marginBottom: 7,
                 }}
               >
-                Siddha Doctor
+                Medical Officer - B.S.M.S.
               </div>
               <div
                 style={{
