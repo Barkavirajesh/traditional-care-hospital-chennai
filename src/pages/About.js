@@ -103,7 +103,7 @@ export default function AboutUsHeroSection() {
       <div className="services-main">
         <h2 className="services-heading">Our Holistic Sidha Services</h2>
         <p className="services-desc">
-          At TCH , we offer a wide range of holistic Sidha services. 
+          At TCH , we offer a wide range of holistic Siddha services. 
           Our services are designed to restore balance & nourish your mind and body.
         </p>
 
@@ -130,20 +130,20 @@ export default function AboutUsHeroSection() {
           <div className="tour-title">About Tour</div>
           <h2>Step into serenity and harmony</h2>
           <p>
-            These tours provide a chance to learn about the Sidha principles.
+            These tours provide a chance to learn about the Siddha principles.
             Experience the stunning revelations of Nadi Pariksha, a traditional
             diagnostic practice that uses pulse reading to examine your entire well-being.
           </p>
 
           <Bar label="Holistic Wellness Techniques" percent={45} color="#fb923c" />
-          <Bar label="Sidha Meal Insights" percent={45} color="#fb923c" />
+          <Bar label="Siddha Meal Insights" percent={45} color="#fb923c" />
           <Bar label="Traditional Healing Practices" percent={45} color="#fb923c" />
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="progress-right">
-          <img src="/image4.jpg" alt="Magic of Sidha" className="progress-img" />
-          <div className="sidha-tag">Magic of sidha</div>
+          <img src="/image4.jpg" alt="Magic of Siddha" className="progress-img" />
+          <div className="sidha-tag">Magic of Siddha</div>
         </div>
 
       </div>
