@@ -136,7 +136,7 @@ export default function Treatments() {
           className="doctor-img"
         />
 
-        <h3>👩‍⚕️ Guided by Dr. D. Rajalakshmi</h3>
+        <h3>👩‍⚕️ Guided by Dr. D. Rajalakshmi(Medical Officer)</h3>
 
         <p>
           Siddha Physician, 20+ years of holistic healing expertise at Traditional Care Hospital.
